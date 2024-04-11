@@ -26,7 +26,10 @@ Primary use:    Portfolio project
 -------------------------------------------------------------------*/
 
 // Import base/_index.scss entrypoint file
-@use 'base' as b;
+@use 'base';
 
 // Import components/_index.scss entrypoint file
-@use 'components' as c;
+@use 'components';
+
+// Import layout/_index.scss entrypoint file
+@use 'layout';
