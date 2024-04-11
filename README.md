@@ -15,6 +15,9 @@ Difficulty: `junior`
     - [Links](#links)
   - [Project information](#project-information)
     - [User stories and features](#user-stories-and-features)
+    - [Flowcharts](#flowcharts)
+      - [User story 1 and 2](#user-story-1-and-2)
+      - [User story 3](#user-story-3)
   - [Author](#author)
 
 [//]: # '## Deployment status'
@@ -68,8 +71,15 @@ The users should be able to:
    | --- | -------------------------------------- | -------- |
    | 1   | A button to add bookmark functionality | Homepage |
 
-   [//]: # 'Optional: ### Flowchart'
-   [//]: # 'Optional: insert flowchart link below'
+### Flowcharts
+
+#### User story 1 and 2
+
+![Flowchart user story 1 and 2](flowchart-user-story-1-and-2.png)
+
+#### User story 3
+
+![](flowchart-user-story-3.png)
 
 ## Author
 
