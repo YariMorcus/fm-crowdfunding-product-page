@@ -1,0 +1,5 @@
+// Forward header file when _index.scss is @used
+@forward 'header';
+
+// Forward navigation file when _index.scss is @used
+@forward 'navigation';
