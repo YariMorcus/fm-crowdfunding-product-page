@@ -1,0 +1,81 @@
+// Import variables
+@use '../abstracts/variables' as v;
+
+// Import mixins
+@use '../abstracts/mixins' as m;
+
+/* Set core root defaults */
+html {
+  font-size: 10px;
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-rendering: optimizeSpeed;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Disable all animations, transitions and smooth scroll for people that prefer not to see them*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.footer {
+  padding: 0 1.28rem 1.28rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+
+  // &__link {
+  //   &:hover {
+  //   }
+
+  //   &:focus-visible {
+  //     border-radius: 1px;
+  //   }
+  // }
+}
+
+// .noscript {
+//   padding: 2rem 1rem;
+//   font-size: 2rem;
+//   color: v.$light-cyan;
+//   text-align: center;
+//   border-bottom: 1px solid;
+
+//   @include m.breakpoint-md() {
+//     padding: 2rem 0;
+//   }
+// }

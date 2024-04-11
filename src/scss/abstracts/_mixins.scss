@@ -1,0 +1,20 @@
+// Mobile - 360px
+@mixin breakpoint-sm() {
+  @media (min-width: 22.5rem) {
+    @content;
+  }
+}
+
+// Tablet - 768px
+@mixin breakpoint-md() {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+// Landscape - orientation
+@mixin orientation-landscape() {
+  @media (orientation: Landscape) {
+    @content;
+  }
+}
