@@ -13,6 +13,8 @@ Difficulty: `junior`
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Links](#links)
+  - [Project information](#project-information)
+    - [User stories and features](#user-stories-and-features)
   - [Author](#author)
 
 [//]: # '## Deployment status'
@@ -37,12 +39,37 @@ The users should be able to:
 - Solution URL: [Open GitHub repository](https://github.com/YariMorcus/fm-crowdfunding-product-page)
 
 [//]: # 'Insert following when online: - Live Site URL: [open Netlify / GitHub page][fill in link]'
-[//]: # '## Project information'
-[//]: # '### User stories and features'
-[//]: # '1. As a user I want to generate a new piece of advice so I might be able to learn something from it'
-[//]: # '**Feature**: A button that generates a new piece of advice based on an API call'
-[//]: # 'Optional: ### Flowchart'
-[//]: # 'Optional: insert flowchart link below'
+
+## Project information
+
+### User stories and features
+
+1. As a user, I want to select a pledge so I can give money
+
+   |     | Features                            | Part of |
+   | --- | ----------------------------------- | ------- |
+   | 1   | A button that opens a modal         |         |
+   | 2   | A modal that shows several options  |         |
+   | 3   | A form to fill in the pledge amount | Modal   |
+   | 4   | A button to confirm the form        | Modal   |
+
+2. As a user, I want to have confirmation that my money has been transferred
+
+   |     | Features                                | Part of  |
+   | --- | --------------------------------------- | -------- |
+   | 1   | Show confirmation message               | Modal    |
+   | 2   | Update progress bar for visual feedback | Homepage |
+   | 3   | Update total raised money               | Homepage |
+   | 4   | Update total backers by one             | Homepage |
+
+3. As a user, I want to bookmark the product for future reference
+
+   |     | Features                               | Part of  |
+   | --- | -------------------------------------- | -------- |
+   | 1   | A button to add bookmark functionality | Homepage |
+
+   [//]: # 'Optional: ### Flowchart'
+   [//]: # 'Optional: insert flowchart link below'
 
 ## Author
 
