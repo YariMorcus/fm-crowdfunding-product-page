@@ -10,6 +10,7 @@ Difficulty: `junior`
 
 - [Frontend Mentor - Crowdfunding product page](#frontend-mentor---crowdfunding-product-page)
   - [Table of contents](#table-of-contents)
+  - [Deployment status](#deployment-status)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Links](#links)
@@ -20,8 +21,9 @@ Difficulty: `junior`
       - [User story 3](#user-story-3)
   - [Author](#author)
 
-[//]: # '## Deployment status'
-[//]: # 'In case of netlify: insert deployment status on this line'
+## Deployment status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1847b09a-3b92-45eb-b062-59d22aac2553/deploy-status)](https://app.netlify.com/sites/crowdfunding-product-page-yari-morcus/deploys)
 
 ## Overview
 
