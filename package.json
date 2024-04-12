@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "parcel serve src/*.html --no-cache",
-    "build": "parcel build src/*.html"
+    "build": "parcel build src/*.html",
+    "check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
