@@ -62,13 +62,14 @@
 
     <div class="statistics">
         <div class="statistics__backed-container">
-            <p class="statistics__text"><data class="statistics__total-backed" value="89,914">$89,914</data> of <data class="statistics__strived-backed" value="100,000">$100,000</data> backed</p> <!-- statistics__text -->
+            <p id="statistics__total-backed-label" class="statistics__text"><data class="statistics__total-backed" value="89,914">$89,914</data> of <data class="statistics__strived-backed" value="100,000">$100,000</data> backed</p> <!-- statistics__text -->
        </div> <!-- .statistics__backed-container -->
        <div class="statistics__backers-container">
             <p class="statistics__text"><data class="statistics__total-backers" value="5,007">5,007</data> total backers</p> <!-- statistics__text -->
        </div> <!-- .statistics__backers-container -->
        <div class="statistics__days-left-container">
             <p class="statistics__text"><time class="statistics__days-left-value" datetime="2024-06-10">56 days left</time></p> <!-- statistics__text -->
+            <progress aria-labelledby="statistics__total-backed-label" value="89.914" max="100.000">89,914</progress>
        </div> <!-- .statistics__days-left-container -->
     </div> <!-- .statistics -->
 
