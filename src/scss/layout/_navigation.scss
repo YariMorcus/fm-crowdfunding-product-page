@@ -1,0 +1,38 @@
+@use '../abstracts/variables' as v;
+
+// TODO create progressive enhancement CSS basis first
+.navbar {
+  margin: 3rem 2.5rem;
+
+  &__brand-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  &__toggler {
+    display: none;
+  }
+}
+
+.nav {
+  padding: 0;
+  background-color: v.$nav-background-color;
+  border-radius: 0.5rem;
+  list-style: none;
+
+  &__item {
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid v.$nav-item-border-bottom-color;
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+    color: v.$nav-link-text-color;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+}
