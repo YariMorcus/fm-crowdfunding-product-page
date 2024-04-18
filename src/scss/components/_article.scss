@@ -1,9 +1,10 @@
 // Import modules
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .project {
   margin: 3rem 2.5rem;
-  padding: 3rem 2rem 4rem;
+  padding: 3rem 2rem;
   font-size: 1.4rem;
   color: v.$project-section-text-color;
   border: 0.1rem solid v.$project-section-border-color;
@@ -23,13 +24,22 @@
   }
 
   &__section {
-    margin-bottom: 2rem;
-    padding: 3rem 3rem 4rem;
-    border: 0.1rem solid;
-    border-radius: 0.3rem;
+    padding: 3rem 0;
+    border-top: 0.1rem solid;
+
+    @include m.breakpoint-sm {
+      margin-bottom: 2rem;
+      padding: 3rem;
+      border: 0.1rem solid;
+      border-radius: 0.3rem;
+    }
 
     &:last-of-type {
-      margin-bottom: 0;
+      padding-bottom: 0;
+
+      @include m.breakpoint-sm {
+        padding-bottom: 4rem;
+      }
     }
   }
 }
@@ -67,7 +77,9 @@
   }
 
   &--disabled {
-    border: 0.1rem solid v.$project-section-border-color;
+    @include m.breakpoint-sm {
+      border: 0.1rem solid v.$project-section-border-color;
+    }
 
     .reward {
       &__title {
