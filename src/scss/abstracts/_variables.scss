@@ -8,6 +8,7 @@
         1.5 Header
         1.6 Statistics
         1.7 Progress
+        1.8 Buttons
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -66,3 +67,12 @@ $statistics-divider-color:          $nav-item-border-bottom-color;
 */
 
 $progress-total-backed-accent-color:        $dark-cyan;
+
+/*------------------------------------------------------------------
+1. Colors
+    1.8 Buttons
+*/
+
+$btn-primary-text-color:                $white;
+$btn-primary-background-color:          $moderate-cyan;
+$btn-background-color--disabled:        hsl(0 0% 78% / 1);
