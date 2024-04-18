@@ -2,12 +2,15 @@
 @use '../abstracts/variables' as v;
 
 .btn {
+  // cursor: pointer;
+
+  // @TODO refactor padding of primary button for consistency with --reward  button
   &--primary {
     flex: 1;
     font-size: 1.4rem;
     font-weight: bold;
-    color: v.$white;
-    background-color: v.$moderate-cyan;
+    color: v.$btn-primary-text-color;
+    background-color: v.$btn-primary-background-color;
     border: none;
     border-radius: 3rem;
   }
@@ -25,5 +28,16 @@
       height: 0.1rem;
       clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
     }
+  }
+
+  &--reward {
+    padding: 2rem 4rem;
+    width: 17rem;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    background-color: v.$btn-background-color--disabled;
+    outline: none;
   }
 }
