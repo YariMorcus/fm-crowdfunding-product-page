@@ -52,14 +52,15 @@
 
   &__rewards-left {
     margin-bottom: 2rem;
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: 3rem;
     font-weight: bold;
     color: v.$reward-section-rewards-left-number-text-color;
   }
 
   &__rewards-left-text {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     font-weight: normal;
     font-size: 1.6rem;
     color: v.$reward-section-rewards-left-text-color;
