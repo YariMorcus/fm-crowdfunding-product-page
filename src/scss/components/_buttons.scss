@@ -43,8 +43,13 @@
   }
 
   &--reward {
-    padding: 2rem 4rem;
-    width: 17rem;
+    padding: 2rem 1rem;
+    width: 100%;
+
+    @include m.breakpoint-sm {
+      padding: 2rem 4rem;
+      width: 17rem;
+    }
   }
 
   &--disabled {
