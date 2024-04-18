@@ -1,5 +1,6 @@
 // Import modules
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .crowdfunding-header {
   position: relative;
@@ -31,6 +32,11 @@
 
   &__button-container {
     display: flex;
-    column-gap: 1rem;
+    flex-direction: column;
+
+    @include m.breakpoint-sm {
+      flex-direction: row;
+      column-gap: 1rem;
+    }
   }
 }

@@ -1,11 +1,14 @@
 // Import modules
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .btn {
   // cursor: pointer;
 
-  // @TODO refactor padding of primary button for consistency with --reward  button
+  // TODO refactor padding of primary button for consistency with --reward  button
   &--primary {
+    margin-bottom: 2rem;
+    padding: 2rem 4rem;
     flex: 1;
     font-size: 1.4rem;
     font-weight: bold;
@@ -13,13 +16,22 @@
     background-color: v.$btn-primary-background-color;
     border: none;
     border-radius: 3rem;
+
+    @include m.breakpoint-sm {
+      margin-bottom: 0;
+    }
   }
 
   &__bookmark {
-    width: 5.6rem;
+    width: 100%;
     height: 5.6rem;
-    background: top left/contain url('../img/icon-bookmark.svg') no-repeat;
+    background: center/contain url('../img/icon-bookmark.svg') no-repeat #2f2f2f;
     border: 0;
+    border-radius: 3rem;
+
+    @include m.breakpoint-sm {
+      width: 5.6rem;
+    }
 
     &-text {
       position: absolute;
