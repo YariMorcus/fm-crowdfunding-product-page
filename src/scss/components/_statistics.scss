@@ -1,0 +1,41 @@
+// Import modules
+@use '../abstracts/variables' as v;
+
+.statistics {
+  margin: 3rem 2.5rem;
+  padding: 3rem;
+  font-size: 1.4rem;
+  color: v.$statistics-text-color;
+  text-align: center;
+  border: 0.1rem solid v.$statistics-border-color;
+  border-radius: 0.5rem;
+
+  &__backed-container,
+  &__backers-container {
+    margin-bottom: 2rem;
+  }
+
+  &__total-backed,
+  &__total-backers,
+  &__days-left-value {
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 3.1rem;
+    font-weight: 700;
+    color: v.$statistics-number-color;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+  }
+
+  &__divider {
+    width: 8rem;
+    border-top: thin solid v.$statistics-divider-color;
+  }
+
+  &__progress-total-backed {
+    width: 100%;
+    accent-color: v.$dark-cyan;
+  }
+}
