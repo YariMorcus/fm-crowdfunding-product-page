@@ -1,0 +1,93 @@
+// Import modules
+@use '../abstracts/variables' as v;
+
+.project {
+  margin: 3rem 2.5rem;
+  padding: 3rem 2rem 4rem;
+  font-size: 1.4rem;
+  color: v.$project-section-text-color;
+  border: 0.1rem solid v.$project-section-border-color;
+  border-radius: 0.5rem;
+
+  &__introduction {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    color: v.$project-section-title-text-color;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+    padding: 3rem 3rem 4rem;
+    border: 0.1rem solid;
+    border-radius: 0.3rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.reward {
+  &__title {
+    color: v.$reward-section-title-text-color;
+    text-transform: capitalize;
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: v.$reward-section-subtitle-text-color;
+  }
+
+  &__info {
+    margin-bottom: 2rem;
+  }
+
+  &__rewards-left {
+    margin-bottom: 2rem;
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: v.$reward-section-rewards-left-number-text-color;
+  }
+
+  &__rewards-left-text {
+    margin-left: 0.5rem;
+    font-weight: normal;
+    font-size: 1.6rem;
+    color: v.$reward-section-rewards-left-text-color;
+  }
+
+  &--disabled {
+    border: 0.1rem solid v.$project-section-border-color;
+
+    .reward {
+      &__title {
+        color: v.$reward-section-disabled-title-text-color;
+      }
+
+      &__subtitle {
+        color: v.$reward-section-disabled-subtitle-text-color;
+      }
+
+      &__info {
+        color: v.$reward-section-disabled-info-text-color;
+      }
+
+      &__rewards-left {
+        color: v.$reward-section-disabled-rewards-left-number-text-color;
+      }
+
+      &__rewards-left-text {
+        color: v.$reward-section-disabled-rewards-left-text-color;
+      }
+    }
+  }
+}
