@@ -9,6 +9,8 @@
         1.6 Statistics
         1.7 Progress
         1.8 Buttons
+        1.9 Project section
+        2.0 Reward section
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -48,8 +50,8 @@ $nav-link-text-color:                $black;
     1.5 Header
 */
 
-$header-border-color:           hsl(0, 0%, 89%);
-$header-intro-text-color:       $dark-gray;
+$header-border-color:                hsl(0, 0%, 89%);
+$header-intro-text-color:            $dark-gray;
 
 /*------------------------------------------------------------------
 1. Colors
@@ -76,3 +78,30 @@ $progress-total-backed-accent-color:        $dark-cyan;
 $btn-primary-text-color:                $white;
 $btn-primary-background-color:          $moderate-cyan;
 $btn-background-color--disabled:        hsl(0 0% 78% / 1);
+
+/*------------------------------------------------------------------
+1. Colors
+    1.9 Project section
+*/
+
+$project-section-text-color: $dark-gray;
+$project-section-border-color: $header-border-color;
+$project-section-title-text-color: $black;
+
+/*------------------------------------------------------------------
+1. Colors
+    2.0 Reward section
+*/
+
+$reward-section-title-text-color:                   $black;
+$reward-section-subtitle-text-color:                $moderate-cyan;
+$reward-section-rewards-left-text-color:            $dark-gray;
+$reward-section-rewards-left-number-text-color:     $black;
+
+// Disabled
+$reward-section-disabled-border-color:                          $project-section-border-color;
+$reward-section-disabled-title-text-color:                      $dark-gray;
+$reward-section-disabled-subtitle-text-color:                   hsl(176 50% 63% / 1);
+$reward-section-disabled-info-text-color:                       hsl(0 0% 68% / 1);
+$reward-section-disabled-rewards-left-number-text-color:        hsl(0, 0%, 45%);
+$reward-section-disabled-rewards-left-text-color:               hsl(0 0% 68% / 1);
