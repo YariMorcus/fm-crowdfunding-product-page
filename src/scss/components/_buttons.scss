@@ -3,9 +3,8 @@
 @use '../abstracts/mixins' as m;
 
 .btn {
-  // cursor: pointer;
+  cursor: pointer;
 
-  // TODO refactor padding of primary button for consistency with --reward  button
   &--primary {
     margin-bottom: 2rem;
     padding: 2rem 4rem;
