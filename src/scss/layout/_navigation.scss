@@ -3,12 +3,18 @@
 @use '../abstracts/mixins' as m;
 
 // TODO create progressive enhancement CSS basis first
+
 .navbar {
   margin: 3rem 2.5rem 6rem;
 
   &__brand-link {
-    display: inline-block;
     margin-bottom: 2rem;
+    display: inline-block;
+    z-index: 3;
+
+    @include m.breakpoint-md {
+      margin-bottom: 0;
+    }
   }
 
   &__toggler {
@@ -18,6 +24,21 @@
   @include m.breakpoint-sm {
     margin-bottom: 3rem;
   }
+
+  @include m.breakpoint-md {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 12rem;
+  }
+
+  @include m.breakpoint-xl {
+    max-width: 90rem;
+  }
 }
 
 .nav {
@@ -25,6 +46,21 @@
   background-color: v.$nav-background-color;
   border-radius: 0.5rem;
   list-style: none;
+  z-index: 1;
+
+  &-overlay::after {
+    @include m.breakpoint-lg {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100vw;
+      height: 10rem;
+      background: linear-gradient(
+        v.$nav-overlay-gradient-start-color 0%,
+        v.$nav-overlay-gradient-end-color 100%
+      );
+    }
+  }
 
   &__item {
     padding: 1.5rem 4rem;
@@ -32,6 +68,14 @@
 
     &:not(:last-child) {
       border-bottom: 0.1rem solid v.$nav-item-border-bottom-color;
+
+      @include m.breakpoint-md {
+        border-bottom: 0;
+      }
+    }
+
+    @include m.breakpoint-md {
+      padding: 0;
     }
   }
 
@@ -40,6 +84,18 @@
     color: v.$nav-link-text-color;
     text-decoration: none;
     text-transform: capitalize;
+
+    @include m.breakpoint-md {
+      padding: 1.5rem 2rem;
+      display: block;
+      font-weight: 400;
+      color: v.$nav-link-text-color-horizontal-menu;
+    }
+  }
+
+  @include m.breakpoint-md {
+    display: flex;
+    background-color: transparent;
   }
 }
 
@@ -53,7 +109,6 @@
 
     &__brand-link {
       margin-bottom: 0;
-      z-index: 3;
     }
 
     &__toggler {
@@ -83,7 +138,7 @@
     // If JS is available, hide nav by default
     display: none;
 
-    &-overlay {
+    &-overlay--mobile {
       &::after {
         content: '';
         position: absolute;
@@ -98,6 +153,10 @@
         );
 
         z-index: 1;
+
+        @include m.breakpoint-lg {
+          content: none;
+        }
       }
     }
 

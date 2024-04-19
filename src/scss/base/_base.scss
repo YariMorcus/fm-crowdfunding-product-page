@@ -22,6 +22,10 @@ body {
   font-family: 'Commissioner', sans-serif;
   line-height: 1.7;
   background: top left/contain url('../img/image-hero-mobile.jpg') no-repeat;
+
+  @include m.breakpoint-lg {
+    background-image: url('../img/image-hero-desktop.jpg');
+  }
 }
 
 main {
@@ -67,6 +71,10 @@ img {
   //     border-radius: 1px;
   //   }
   // }
+
+  @include m.breakpoint-lg {
+    display: none; // TEMP
+  }
 }
 
 // .noscript {
