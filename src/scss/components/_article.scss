@@ -39,6 +39,7 @@
       padding-bottom: 0;
 
       @include m.breakpoint-sm {
+        margin-bottom: 0;
         padding-bottom: 4rem;
       }
     }
