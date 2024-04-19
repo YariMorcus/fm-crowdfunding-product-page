@@ -51,14 +51,16 @@ $nav-link-text-color:                $black;
 */
 
 $header-border-color:                hsl(0, 0%, 89%);
+$header-background-color:            $white;
 $header-intro-text-color:            $dark-gray;
 
 /*------------------------------------------------------------------
 1. Colors
-    1.6 Statistics
+1.6 Statistics
 */
 
 $statistics-border-color:           $header-border-color;
+$statistics-background-color:       $white;
 $statistics-text-color:             $dark-gray;
 $statistics-number-color:           $black;
 $statistics-divider-color:          $nav-item-border-bottom-color;
@@ -84,9 +86,10 @@ $btn-background-color--disabled:        hsl(0 0% 78% / 1);
     1.9 Project section
 */
 
-$project-section-text-color: $dark-gray;
-$project-section-border-color: $header-border-color;
-$project-section-title-text-color: $black;
+$project-section-border-color:              $header-border-color;
+$project-section-background-color:          $white;
+$project-section-text-color:                $dark-gray;
+$project-section-title-text-color:          $black;
 
 /*------------------------------------------------------------------
 1. Colors
