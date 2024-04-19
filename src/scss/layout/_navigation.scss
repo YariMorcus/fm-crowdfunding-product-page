@@ -36,3 +36,37 @@
     text-transform: capitalize;
   }
 }
+
+.js {
+  .navbar {
+    margin-bottom: 14rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__brand-link {
+      margin-bottom: 0;
+    }
+
+    &__toggler {
+      display: block;
+      width: 4.4rem;
+      height: 4.4rem;
+      background: center url('../img/icon-hamburger.svg') no-repeat transparent;
+      border: none;
+
+      &-text {
+        position: absolute;
+        width: 0.1rem;
+        height: 0.1rem;
+        overflow: hidden;
+        clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+      }
+    }
+  }
+
+  // If JS is available, hide nav by default
+  .nav {
+    display: none;
+  }
+}
