@@ -131,6 +131,10 @@
       &.is-active {
         background-image: url('../img/icon-close-menu.svg');
       }
+
+      @include m.breakpoint-md {
+        display: none;
+      }
     }
   }
 
@@ -166,6 +170,11 @@
       display: block;
       width: 100%;
       z-index: 2;
+    }
+
+    @include m.breakpoint-md {
+      display: flex;
+      background-color: transparent;
     }
   }
 }
