@@ -41,9 +41,12 @@ $white:                 hsl(0, 0%, 100%);
     1.4 Navigation
 */
 
-$nav-background-color:               $white;
-$nav-item-border-bottom-color:       hsl(0, 0%, 75%);
-$nav-link-text-color:                $black;
+$nav-background-color:                      $white;
+$nav-item-border-bottom-color:              hsl(0, 0%, 75%);
+$nav-link-text-color:                       $black;
+$nav-overlay-gradient-start-color:          rgba(20, 20, 20, 0.7);
+$nav-overlay-gradient-end-color:            rgba(0, 212, 255, 0);
+$nav-overlay-fallback-background-color:     rgb(20, 20, 20);
 
 /*------------------------------------------------------------------
 1. Colors

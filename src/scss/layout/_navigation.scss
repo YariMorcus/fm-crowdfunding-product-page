@@ -39,6 +39,7 @@
 
 .js {
   .navbar {
+    position: relative;
     margin-bottom: 17rem;
     display: flex;
     justify-content: space-between;
@@ -46,14 +47,17 @@
 
     &__brand-link {
       margin-bottom: 0;
+      z-index: 3;
     }
 
     &__toggler {
+      margin-right: -1.5rem;
       display: block;
       width: 4.4rem;
       height: 4.4rem;
       background: center url('../img/icon-hamburger.svg') no-repeat transparent;
       border: none;
+      z-index: 3;
 
       &-text {
         position: absolute;
@@ -62,11 +66,41 @@
         overflow: hidden;
         clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
       }
+
+      &.is-active {
+        background-image: url('../img/icon-close-menu.svg');
+      }
     }
   }
 
-  // If JS is available, hide nav by default
   .nav {
+    // If JS is available, hide nav by default
     display: none;
+
+    &-overlay {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100vw;
+        height: 60rem;
+        background: v.$nav-overlay-fallback-background-color;
+        background: linear-gradient(
+          180deg,
+          v.$nav-overlay-gradient-start-color 0%,
+          v.$nav-overlay-gradient-end-color 100%
+        );
+
+        z-index: 1;
+      }
+    }
+
+    &.is-expanded {
+      position: absolute;
+      top: 5rem;
+      display: block;
+      width: 100%;
+      z-index: 2;
+    }
   }
 }
