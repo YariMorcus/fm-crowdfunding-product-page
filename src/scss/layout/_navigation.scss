@@ -36,7 +36,12 @@
     column-gap: 12rem;
   }
 
+  @include m.breakpoint-lg {
+    margin-bottom: 10rem;
+  }
+
   @include m.breakpoint-xl {
+    margin-bottom: 20rem;
     max-width: 90rem;
   }
 }
