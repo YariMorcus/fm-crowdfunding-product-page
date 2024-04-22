@@ -34,9 +34,14 @@ main {
   flex: 1;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
+  border-bottom: 0.1rem solid;
+
+  /* A elements that don't have a class get default styles */
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
 }
 
 /* Make images easier to work with */
@@ -54,26 +59,6 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-.footer {
-  padding: 0 1.28rem 1.28rem;
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-
-  // &__link {
-  //   &:hover {
-  //   }
-
-  //   &:focus-visible {
-  //     border-radius: 1px;
-  //   }
-  // }
-
-  @include m.breakpoint-lg {
-    display: none; // TEMP
   }
 }
 

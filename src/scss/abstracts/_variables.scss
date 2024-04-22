@@ -11,6 +11,7 @@
         1.8 Buttons
         1.9 Project section
         2.0 Reward section
+        2.1 Footer
 
     2. Utility class colors
         2.1 Borders
@@ -120,7 +121,15 @@ $reward-section-disabled-info-text-color:                       hsl(0 0% 68% / 1
 $reward-section-disabled-rewards-left-number-text-color:        hsl(0, 0%, 45%);
 $reward-section-disabled-rewards-left-text-color:               hsl(0 0% 68% / 1);
 
+/*------------------------------------------------------------------
+1. Colors
+    2.1 Footer
+*/
 
+$footer-link-text-visited-color:        hsl(300, 100%, 25%);
+$footer-link-text-hover-color:          $dark-cyan;
+$footer-link-text-active-color:         hsl(0, 100%, 45%);
+$footer-link-focus-visible-color:       $black;
 
 /*------------------------------------------------------------------
 2. Utility class colors

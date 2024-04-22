@@ -1,3 +1,6 @@
+// Forward footer file when _index.scss is @used
+@forward 'footer';
+
 // Forward header file when _index.scss is @used
 @forward 'header';
 
