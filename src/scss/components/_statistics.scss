@@ -1,5 +1,6 @@
 // Import modules
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .statistics {
   margin: 0 2.5rem 3rem;
@@ -14,6 +15,13 @@
   &__backed-container,
   &__backers-container {
     margin-bottom: 2rem;
+  }
+
+  &__backers-container,
+  &__days-left-container {
+    @include m.breakpoint-lg {
+      padding-left: 5rem;
+    }
   }
 
   &__total-backed,
@@ -33,10 +41,29 @@
   &__divider {
     width: 8rem;
     border-top: thin solid v.$statistics-divider-color;
+
+    @include m.breakpoint-lg {
+      display: none;
+    }
   }
 
   &__progress-total-backed {
     width: 100%;
+    height: 2rem;
     accent-color: v.$progress-total-backed-accent-color;
+
+    @include m.breakpoint-md {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  @include m.breakpoint-lg {
+    margin: 0 auto 3rem;
+    padding: 5rem 5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 80rem;
+    text-align: left;
   }
 }

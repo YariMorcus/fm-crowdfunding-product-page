@@ -1,0 +1,9 @@
+// Import modules
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.lg-border-right-lightgrey {
+  @include m.breakpoint-lg {
+    border-right: thin solid v.$border-right-light-grey-color;
+  }
+}

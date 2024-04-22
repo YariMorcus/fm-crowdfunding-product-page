@@ -11,6 +11,9 @@
         1.8 Buttons
         1.9 Project section
         2.0 Reward section
+
+    2. Utility class colors
+        2.1 Borders
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -116,3 +119,12 @@ $reward-section-disabled-subtitle-text-color:                   hsl(176 50% 63% 
 $reward-section-disabled-info-text-color:                       hsl(0 0% 68% / 1);
 $reward-section-disabled-rewards-left-number-text-color:        hsl(0, 0%, 45%);
 $reward-section-disabled-rewards-left-text-color:               hsl(0 0% 68% / 1);
+
+
+
+/*------------------------------------------------------------------
+2. Utility class colors
+    2.1 Borders
+*/
+
+$border-right-light-grey-color:    $nav-item-border-bottom-color;
