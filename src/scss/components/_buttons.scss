@@ -83,7 +83,7 @@
 
     @include m.breakpoint-sm {
       padding: 2rem 4rem;
-      width: 17rem;
+      max-width: 17rem;
     }
   }
 

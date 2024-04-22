@@ -44,9 +44,24 @@
       }
     }
   }
+
+  @include m.breakpoint-lg {
+    margin: 0 auto 3rem;
+    padding: 5rem 5rem 4rem;
+    width: 100%;
+    max-width: 70rem;
+  }
 }
 
 .reward {
+  &__header {
+    @include m.breakpoint-md {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__title {
     color: v.$reward-section-title-text-color;
     text-transform: capitalize;
@@ -56,10 +71,22 @@
     margin-bottom: 2rem;
     font-weight: 500;
     color: v.$reward-section-subtitle-text-color;
+
+    @include m.breakpoint-md {
+      margin-bottom: 0;
+    }
   }
 
   &__info {
     margin-bottom: 2rem;
+  }
+
+  &__button-wrapper {
+    @include m.breakpoint-md {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__rewards-left {
