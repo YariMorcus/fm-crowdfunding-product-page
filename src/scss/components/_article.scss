@@ -85,7 +85,7 @@
     @include m.breakpoint-md {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      // align-items: center;
     }
   }
 
@@ -96,6 +96,10 @@
     font-size: 3rem;
     font-weight: bold;
     color: v.$reward-section-rewards-left-number-text-color;
+
+    @include m.breakpoint-md {
+      margin-bottom: 0;
+    }
   }
 
   &__rewards-left-text {
