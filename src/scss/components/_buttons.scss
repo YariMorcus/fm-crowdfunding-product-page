@@ -5,6 +5,10 @@
 .btn {
   cursor: pointer;
 
+  &:focus-visible {
+    outline: 0.2rem solid v.$btn-focus-visible-outline-color;
+  }
+
   &--primary {
     margin-bottom: 2rem;
     padding: 2rem 4rem;
@@ -91,5 +95,9 @@
     pointer-events: none;
     background-color: v.$btn-background-color--disabled;
     outline: none;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 }
