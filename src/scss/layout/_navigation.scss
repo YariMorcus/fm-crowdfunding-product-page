@@ -13,6 +13,10 @@
     border-bottom: 0;
     z-index: 3;
 
+    &:focus-visible {
+      outline-offset: 1rem;
+    }
+
     @include m.breakpoint-md {
       margin-bottom: 0;
     }
