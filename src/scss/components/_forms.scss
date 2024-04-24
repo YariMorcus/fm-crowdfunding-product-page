@@ -1,0 +1,116 @@
+// Import modules
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.pledge-form {
+  &__inner-container {
+    display: none;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border: 0.1rem solid;
+    border-radius: 0.5rem;
+
+    &:has(.pledge-form__radio-button:checked) {
+      border-color: transparent;
+      outline: 0.2rem solid v.$modal-form-fieldset-checked-outline-color;
+    }
+
+    &--disabled {
+      border: 0.1rem solid v.$form-section-disabled-border-color;
+
+      & .pledge-form {
+        &__label-radio {
+          color: v.$form-radio-label-disabled-text-color;
+        }
+        &__label--pledge {
+          color: v.$form-radio-label-pledge-disabled-text-color;
+        }
+
+        &__pledge-info {
+          color: v.$form-pledge-info-disabled-text-color;
+        }
+
+        &__left {
+          color: v.$form-pledge-left-disabled-text-color;
+        }
+
+        &__left-number {
+          color: v.$form-pledge-left-number-disabled-text-color;
+        }
+      }
+    }
+  }
+
+  &__radio-container {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-button {
+    position: relative;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.1rem solid v.$modal-form-radio-button-border-color;
+    border-radius: 50%;
+
+    &:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 50%;
+      height: 50%;
+      transform: translate(-50%, -50%);
+      background-color: v.$modal-form-radio-button-checked-background-color;
+      border-radius: 100%;
+    }
+
+    &:disabled {
+      border: 0.1rem solid v.$form-radio-button-disabled-border-color;
+    }
+
+    &:focus-visible {
+      outline: solid 0.2rem
+        v.$modal-form-radio-button-focus-visible-outline-color;
+    }
+  }
+
+  &__label-radio {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: v.$modal-form-radio-label-text-color;
+  }
+
+  &__label--pledge {
+    font-weight: 500;
+    color: v.$modal-form-pledge-label-text-color;
+  }
+
+  &__pledge-info {
+    margin-bottom: 2rem;
+  }
+
+  &__left-number {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: v.$modal-left-number-text-color;
+  }
+}
+
+// Do not add margin bottom when there is no reward associated with the pledge
+.pledge-form__section--no-reward {
+  .pledge-form {
+    &__pledge-info {
+      margin-bottom: 0;
+    }
+  }
+}

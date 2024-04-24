@@ -4,19 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link rel="stylesheet" href="scss/main.scss">
 </head>
 <body>
+
+  <nav class="navbar" role="navigation">
+    <a href="#" class="navbar__brand-link">
+        <img class="navbar__brand-img" src="./img/logo.svg" width="128" height="20" alt="Go to current page">
+    </a> <!-- .navbar__brand-link -->
+
+    <button id="js-navbar-toggle" class="navbar__toggler" aria-expanded="false" aria-controls="js-nav">
+        <span class="navbar__toggler-text">Menu</span>
+    </button> <!-- .navbar__toggler -->
+
+    <ul id="js-nav" class="nav">
+        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Discover</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Get started</a></li>
+    </ul> <!-- .nav -->
+</nav> <!-- .navbar -->
+
   <!-- MODAL HTML -->
   <!-- // TODO remove open attr. later on -->
-  <dialog class="modal back-modal" open>
-    <button class="btn btn--close" autofocus>Close</button>
-    <h2 class="back-modal__title">Back this project</h2>
+  <dialog id="js-modal" class="modal back-modal">
+    <header class="modal__header">
+      <h2 class="back-modal__title">Back this project</h2>
+      <button class="btn btn__modal--close" autofocus><span class="btn__modal-close-text">Close</span></button>
+    </header> <!-- .modal__header -->
     <p class="back-modal__intro">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
     <form action="#" method="POST" class="pledge-form back-modal__form">
-      <fieldset class="pledge-form__section">
+      <fieldset class="pledge-form__section pledge-form__section--no-reward">
         <div class="pledge-form__radio-container">
-          <input type="radio" name="pledge-selection" id="pledge-form__pledge-no-reward" class="pledge-form__radio-button" checked>
+          <input type="radio" name="pledge-selection" id="pledge-form__pledge-no-reward" class="pledge-form__radio-button">
           <label class="pledge-form__label-radio" for="pledge-form__pledge-no-reward">Pledge with no reward</label>
         </div> <!-- .pledge-form__radio-container -->
         <p class="pledge-form__pledge-info">
@@ -34,12 +55,14 @@
           You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
         </p> <!-- .pledge-form__pledge-info -->
         <p class="pledge-form__left"><data class="pledge-form__left-number" value="101">101</data> left</p>
-        <hr class="pledge-form__divider">
-        <label class="pledge-form__label" for="pledge-form__bamboo-stand">Enter your pledge</label>
-        <div class="pledge-form__input-pledge-container">
-          <input type="tel" id="pledge-form__bamboo-stand" class="pledge-form__input" pattern="^(\d+)$" required>
-          <button class="btn btn--primary">Continue</button>
-        </div> <!-- .pledge-form__input-pledge-container -->
+        <div class="pledge-form__inner-container">
+          <hr class="pledge-form__divider">
+          <label class="pledge-form__label" for="pledge-form__bamboo-stand">Enter your pledge</label>
+          <div class="pledge-form__input-pledge-container">
+            <input type="tel" id="pledge-form__bamboo-stand" class="pledge-form__input" pattern="^(\d+)$" required>
+            <button class="btn btn--primary">Continue</button>
+          </div> <!-- .pledge-form__input-pledge-container -->
+        </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
 
       <fieldset class="pledge-form__section">
@@ -51,31 +74,43 @@
           You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
         </p> <!-- .pledge-form__pledge-info -->
         <p class="pledge-form__left"><data class="pledge-form__left-number" value="64">64</data> left</p>
-        <hr class="pledge-form__divider">
-        <label class="pledge-form__label" for="pledge-form__black-edition-stand">Enter your pledge</label>
-        <div class="pledge-form__input-pledge-container">
-          <input type="tel" id="pledge-form__black-edition-stand" class="pledge-form__input" pattern="^(\d+)$" required>
-          <button class="btn btn--primary">Continue</button>
-        </div> <!-- .pledge-form__input-pledge-container -->
+        <div class="pledge-form__inner-container">
+          <hr class="pledge-form__divider">
+          <label class="pledge-form__label" for="pledge-form__black-edition-stand">Enter your pledge</label>
+          <div class="pledge-form__input-pledge-container">
+            <input type="tel" id="pledge-form__black-edition-stand" class="pledge-form__input" pattern="^(\d+)$" required>
+            <button class="btn btn--primary">Continue</button>
+          </div> <!-- .pledge-form__input-pledge-container -->
+        </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
 
-      <fieldset class="pledge-form__section pledge-form__section--disabled">
+      <fieldset class="pledge-form__section pledge-form__section--disabled mb-0">
         <div class="pledge-form__radio-container">
-          <input type="radio" name="pledge-selection" id="pledge-form__pledge-200" class="pledge-form__radio-button">
+          <input type="radio" name="pledge-selection" id="pledge-form__pledge-200" class="pledge-form__radio-button" disabled>
           <label class="pledge-form__label-radio" for="pledge-form__pledge-200">Mahogany Special Edition<span class="pledge-form__label--pledge">Pledge <data class="pledge-form__label--amount" value="200">$200</data> or more</span></label>
         </div> <!-- .pledge-form__radio-container -->
         <p class="pledge-form__pledge-info">
           You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
         </p> <!-- .pledge-form__pledge-info -->
         <p class="pledge-form__left"><data class="pledge-form__left-number" value="0">0</data> left</p>
-        <hr class="pledge-form__divider">
-        <label class="pledge-form__label" for="pledge-form__mahogany-special-edition">Enter your pledge</label>
-        <div class="pledge-form__input-pledge-container">
-          <input type="tel" id="pledge-form__mahogany-special-edition" class="pledge-form__input" pattern="^(\d+)$" required>
-          <button class="btn btn--primary">Continue</button>
-        </div> <!-- .pledge-form__input-pledge-container -->
+        <div class="pledge-form__inner-container">
+          <hr class="pledge-form__divider">
+          <label class="pledge-form__label" for="pledge-form__mahogany-special-edition">Enter your pledge</label>
+          <div class="pledge-form__input-pledge-container">
+            <input type="tel" id="pledge-form__mahogany-special-edition" class="pledge-form__input" pattern="^(\d+)$" required>
+            <button class="btn btn--primary">Continue</button>
+          </div> <!-- .pledge-form__input-pledge-container -->
+        </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
     </form> <!-- .back-modal__form -->
   </dialog> <!-- .back-modal -->
+
+ <!-- TODO Remove later on when backdrop is implemented -->
+  <script>
+    document.querySelector('.navbar__brand-link').addEventListener('click', function() {
+      const modal = document.querySelector('#js-modal');
+      modal.showModal();
+    })
+  </script>
 </body>
 </html>

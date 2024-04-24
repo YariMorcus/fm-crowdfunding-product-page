@@ -11,10 +11,13 @@
         1.8 Buttons
         1.9 Project section
         2.0 Reward section
-        2.1 Footer
+        2.2 Footer
 
-    2. Utility class colors
-        2.1 Borders
+    2. Modal colors
+        2.1 Form
+
+    3. Utility class colors
+        3.1 Borders
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -64,7 +67,7 @@ $header-intro-text-color:            $dark-gray;
 
 /*------------------------------------------------------------------
 1. Colors
-1.6 Statistics
+    1.6 Statistics
 */
 
 $statistics-border-color:           $header-border-color;
@@ -117,7 +120,7 @@ $reward-section-rewards-left-number-text-color:     $black;
 
 // Disabled
 $reward-section-disabled-border-color:                          $project-section-border-color;
-$reward-section-disabled-title-text-color:                      $dark-gray;
+$reward-section-disabled-title-text-color:                      hsl(0 0% 55% / 1);
 $reward-section-disabled-subtitle-text-color:                   hsl(176 50% 63% / 1);
 $reward-section-disabled-info-text-color:                       hsl(0 0% 68% / 1);
 $reward-section-disabled-rewards-left-number-text-color:        hsl(0, 0%, 45%);
@@ -125,7 +128,7 @@ $reward-section-disabled-rewards-left-text-color:               hsl(0 0% 68% / 1
 
 /*------------------------------------------------------------------
 1. Colors
-    2.1 Footer
+    2.2 Footer
 */
 
 $footer-link-text-visited-color:        hsl(300, 100%, 25%);
@@ -134,8 +137,37 @@ $footer-link-text-active-color:         hsl(0, 100%, 45%);
 $footer-link-focus-visible-color:       $black;
 
 /*------------------------------------------------------------------
-2. Utility class colors
-    2.1 Borders
+2. Modal colors
+*/
+
+$modal-backdrop-background-color:   hsla(0deg 0% 0% / 40%);
+$modal-text-color:                  $dark-gray;
+$modal-left-number-text-color:      $black;
+
+/*------------------------------------------------------------------
+2. Modal colors
+    2.1 Form
+*/
+
+$modal-form-pledge-label-text-color:                    $moderate-cyan;
+$modal-form-radio-button-border-color:                  hsl(0, 0%, 55%);
+$modal-form-radio-button-focus-visible-outline-color:   $black;
+$modal-form-radio-button-checked-background-color:      $moderate-cyan;
+$modal-form-radio-label-text-color:                     $black;
+$modal-form-fieldset-checked-outline-color:             $moderate-cyan;
+
+// Disabled states
+$form-section-disabled-border-color:                $project-section-border-color;
+$form-radio-button-disabled-border-color:           hsl(0 0% 85% / 1);
+$form-radio-label-disabled-text-color:              $reward-section-disabled-title-text-color;
+$form-radio-label-pledge-disabled-text-color:       $reward-section-disabled-subtitle-text-color;
+$form-pledge-info-disabled-text-color:              $reward-section-disabled-info-text-color;
+$form-pledge-left-disabled-text-color:              $form-pledge-info-disabled-text-color;
+$form-pledge-left-number-disabled-text-color:       $reward-section-disabled-rewards-left-number-text-color;
+
+/*------------------------------------------------------------------
+3. Utility class colors
+    3.1 Borders
 */
 
 $border-right-light-grey-color:    $nav-item-border-bottom-color;

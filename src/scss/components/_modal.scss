@@ -1,0 +1,43 @@
+// Import modules
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.modal {
+  position: fixed;
+  top: 8rem;
+  font-size: 1.4rem;
+  border-radius: 0.8rem;
+  border: none;
+
+  &::backdrop {
+    background-color: v.$modal-backdrop-background-color;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include m.breakpoint-sm {
+    margin: 0 2.5rem 3rem;
+    padding: 2.5rem;
+  }
+}
+
+.back-modal {
+  &__intro {
+    margin-bottom: 2rem;
+  }
+
+  &__intro,
+  &__form {
+    color: v.$modal-text-color;
+  }
+}
+
+.js {
+  .modal {
+    top: 10rem;
+  }
+}
