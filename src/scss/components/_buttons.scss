@@ -105,7 +105,6 @@
   &__modal--close {
     position: relative;
     top: -0.2rem;
-    right: -1.45rem;
     width: 4.4rem;
     height: 4.4rem;
     background: center url('../img/icon-close-modal.svg') no-repeat transparent;
@@ -113,6 +112,10 @@
 
     &:focus-visible {
       border-radius: 0.2rem;
+    }
+
+    @include m.breakpoint-sm {
+      right: -1.45rem;
     }
   }
 

@@ -8,19 +8,34 @@
   }
 
   &__section {
-    margin-bottom: 2rem;
-    padding: 3rem;
-    border: 0.1rem solid;
-    border-radius: 0.5rem;
+    margin: 0 -1.4rem;
+    padding: 3rem 1.4rem;
+    border: 0;
+    border-top: 1px solid v.$modal-form-section-border-color;
 
+    // Indicate that section is active when radio button inside is pressed
+    // (user decision)
     &:has(.pledge-form__radio-button:checked) {
+      background-color: v.$modal-form-section-active-background-color;
       border-color: transparent;
-      outline: 0.2rem solid v.$modal-form-fieldset-checked-outline-color;
+      border-radius: 0.4rem;
+
+      // On larger screens: replace background color with outline
+      // (more space available for outline)
+      @include m.breakpoint-sm {
+        background-color: initial;
+        outline: 0.2rem solid v.$modal-form-fieldset-checked-outline-color;
+      }
+    }
+
+    @include m.breakpoint-sm {
+      margin: 0 0 2rem;
+      padding: 3rem;
+      border: 0.1rem solid v.$modal-form-section-border-color;
+      border-radius: 0.5rem;
     }
 
     &--disabled {
-      border: 0.1rem solid v.$form-section-disabled-border-color;
-
       & .pledge-form {
         &__label-radio {
           color: v.$form-radio-label-disabled-text-color;
@@ -40,6 +55,10 @@
         &__left-number {
           color: v.$form-pledge-left-number-disabled-text-color;
         }
+      }
+
+      @include m.breakpoint-sm {
+        border: 0.1rem solid v.$form-section-disabled-border-color;
       }
     }
   }
