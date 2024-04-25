@@ -103,7 +103,7 @@ $btn-focus-visible-outline-color:       $black;
     1.9 Project section
 */
 
-$project-section-border-color:              $header-border-color;
+$project-section-border-color:              hsl(0, 0%, 80%);
 $project-section-background-color:          $white;
 $project-section-text-color:                $dark-gray;
 $project-section-title-text-color:          $black;
@@ -113,6 +113,7 @@ $project-section-title-text-color:          $black;
     2.0 Reward section
 */
 
+$reward-section-border-color:                       $project-section-border-color;
 $reward-section-title-text-color:                   $black;
 $reward-section-subtitle-text-color:                $moderate-cyan;
 $reward-section-rewards-left-text-color:            $dark-gray;

@@ -15,7 +15,7 @@
     margin: 0 -1.4rem;
     padding: 3rem 1.4rem;
     border: 0;
-    border-top: 1px solid v.$modal-form-section-border-color;
+    border-top: 1px solid v.$project-section-border-color;
 
     // Indicate that section is active when radio button inside is pressed
     // (user decision)
@@ -35,7 +35,7 @@
     @include m.breakpoint-sm {
       margin: 0 0 2rem;
       padding: 3rem;
-      border: 0.1rem solid v.$modal-form-section-border-color;
+      border: 0.1rem solid v.$project-section-border-color;
       border-radius: 0.5rem;
     }
 
