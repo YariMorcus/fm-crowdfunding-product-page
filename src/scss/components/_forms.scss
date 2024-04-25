@@ -78,7 +78,7 @@
 
   &__left {
     @include m.breakpoint-lg {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       grid-area: pledge-left;
       justify-self: end;
     }
@@ -90,6 +90,7 @@
     align-items: center;
 
     @include m.breakpoint-lg {
+      margin-bottom: 1rem;
       grid-area: radio-container;
       align-items: flex-end;
     }
@@ -180,16 +181,16 @@
     }
   }
 
-  &__left,
-  &__divider {
+  &__left {
     margin-bottom: 2rem;
 
     @include m.breakpoint-lg {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
   }
 
   &__divider {
+    margin-bottom: 3rem;
     grid-area: form-divider;
     height: 0.1rem;
     background-color: v.$modal-form-divider-background-color;
@@ -203,6 +204,7 @@
     }
 
     @include m.breakpoint-lg {
+      margin-bottom: 2.5rem;
       margin-left: -7rem;
       margin-right: -2.5rem;
     }
