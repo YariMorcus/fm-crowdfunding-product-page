@@ -169,6 +169,15 @@
 .pledge-form__section.is-active .pledge-form {
   &__inner-container {
     display: block;
+
+    @include m.breakpoint-lg {
+      display: grid;
+      margin-left: 4.5rem;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas:
+        'form-divider form-divider form-divider'
+        'form-label . input-pledge-container';
+    }
   }
 
   &__left,
@@ -181,13 +190,21 @@
   }
 
   &__divider {
+    grid-area: form-divider;
     height: 0.1rem;
     background-color: v.$modal-form-divider-background-color;
     border: none;
 
+    // Show divider across entire width
+    // Negative values are reversed padding values
     @include m.breakpoint-sm {
       margin-right: -3rem;
       margin-left: -3rem;
+    }
+
+    @include m.breakpoint-lg {
+      margin-left: -7rem;
+      margin-right: -2.5rem;
     }
   }
 
@@ -195,6 +212,13 @@
     margin-bottom: 2rem;
     display: block;
     text-align: center;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 0;
+      grid-area: form-label;
+      align-self: center;
+      text-align: left;
+    }
   }
 
   &__input-pledge-container {
@@ -202,6 +226,10 @@
       display: flex;
       flex-wrap: wrap;
       column-gap: 2rem;
+    }
+
+    @include m.breakpoint-lg {
+      grid-area: input-pledge-container;
     }
   }
 
