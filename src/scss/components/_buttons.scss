@@ -126,4 +126,10 @@
     clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
     overflow: hidden;
   }
+
+  // TODO fix continue button positioning/size of modal form
+  // TODO check for possible other and better name for class
+  &--form-continue {
+    padding: 1.5rem 2rem;
+  }
 }

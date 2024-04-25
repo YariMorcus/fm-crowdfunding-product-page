@@ -46,7 +46,7 @@
         </p> <!-- .pledge-form__pledge-info -->
       </fieldset> <!-- .pledge-form__section -->
 
-      <fieldset class="pledge-form__section">
+      <fieldset class="pledge-form__section is-active">
         <div class="pledge-form__radio-container">
           <input type="radio" name="pledge-selection" id="pledge-form__pledge-25" class="pledge-form__radio-button">
           <label class="pledge-form__label-radio" for="pledge-form__pledge-25">Bamboo Stand<span class="pledge-form__label--pledge">Pledge <data class="pledge-form__label--amount" value="25">$25</data> or more</span></label>
@@ -59,13 +59,13 @@
           <hr class="pledge-form__divider">
           <label class="pledge-form__label" for="pledge-form__bamboo-stand">Enter your pledge</label>
           <div class="pledge-form__input-pledge-container">
-            <input type="tel" id="pledge-form__bamboo-stand" class="pledge-form__input" pattern="^(\d+)$" required>
-            <button class="btn btn--primary">Continue</button>
+            <span class="pledge-form__input-wrapper"><input type="tel" id="pledge-form__bamboo-stand" class="pledge-form__input" pattern="^(\d+)$" required></span>
+            <button class="btn btn--primary btn--form-continue">Continue</button>
           </div> <!-- .pledge-form__input-pledge-container -->
         </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
 
-      <fieldset class="pledge-form__section">
+      <fieldset class="pledge-form__section is-active">
         <div class="pledge-form__radio-container">
           <input type="radio" name="pledge-selection" id="pledge-form__pledge-75" class="pledge-form__radio-button">
           <label class="pledge-form__label-radio" for="pledge-form__pledge-75">Black Edition Stand<span class="pledge-form__label--pledge">Pledge <data class="pledge-form__label--amount" value="75">$75</data> or more</span></label>
@@ -78,8 +78,8 @@
           <hr class="pledge-form__divider">
           <label class="pledge-form__label" for="pledge-form__black-edition-stand">Enter your pledge</label>
           <div class="pledge-form__input-pledge-container">
-            <input type="tel" id="pledge-form__black-edition-stand" class="pledge-form__input" pattern="^(\d+)$" required>
-            <button class="btn btn--primary">Continue</button>
+            <span class="pledge-form__input-wrapper"><input type="tel" id="pledge-form__black-edition-stand" class="pledge-form__input" pattern="^(\d+)$" required></span>
+            <button class="btn btn--primary btn--form-continue">Continue</button>
           </div> <!-- .pledge-form__input-pledge-container -->
         </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
@@ -97,14 +97,15 @@
           <hr class="pledge-form__divider">
           <label class="pledge-form__label" for="pledge-form__mahogany-special-edition">Enter your pledge</label>
           <div class="pledge-form__input-pledge-container">
-            <input type="tel" id="pledge-form__mahogany-special-edition" class="pledge-form__input" pattern="^(\d+)$" required>
-            <button class="btn btn--primary">Continue</button>
+            <span class="pledge-form__input-wrapper"><input type="tel" id="pledge-form__mahogany-special-edition" class="pledge-form__input" pattern="^(\d+)$" required></span>
+            <button class="btn btn--primary btn--form-continue">Continue</button>
           </div> <!-- .pledge-form__input-pledge-container -->
         </div> <!-- .pledge-form__inner-container -->
       </fieldset> <!-- .pledge-form__section -->
     </form> <!-- .back-modal__form -->
   </dialog> <!-- .back-modal -->
 
+<!-- TODO add min attributes to input fields -->
  <!-- TODO Remove later on when backdrop is implemented -->
   <script>
     document.querySelector('.navbar__brand-link').addEventListener('click', function() {
