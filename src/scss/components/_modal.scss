@@ -18,17 +18,36 @@
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 0;
+    }
   }
 
   @include m.breakpoint-sm {
     margin: 0 2.5rem 3rem;
     padding: 2.5rem;
   }
+
+  @include m.breakpoint-md {
+    top: 12rem;
+    margin: 0 auto;
+    max-width: 50rem;
+  }
+
+  @include m.breakpoint-lg {
+    padding: 4rem;
+    max-width: 70rem;
+  }
 }
 
 .back-modal {
   &__intro {
     margin-bottom: 2rem;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 4rem;
+    }
   }
 
   &__intro,
