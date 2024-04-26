@@ -47,6 +47,24 @@
   }
 }
 
+.modal-thank-you {
+  padding: 4rem 2.5rem;
+  text-align: center;
+
+  &__icon-check {
+    margin: 0 auto 2rem;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__paragraph {
+    margin-bottom: 4rem;
+    color: v.$modal-text-color;
+  }
+}
+
 .back-modal {
   &__intro {
     margin-bottom: 2rem;
@@ -64,6 +82,6 @@
 
 .js {
   .modal {
-    top: 10rem;
+    top: 50%;
   }
 }
