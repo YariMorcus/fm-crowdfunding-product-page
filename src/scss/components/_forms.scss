@@ -82,6 +82,7 @@
     height: 2.5rem;
     border: 0.1rem solid v.$modal-form-radio-button-border-color;
     border-radius: 50%;
+    flex-shrink: 0;
 
     &:checked::after {
       content: '';
