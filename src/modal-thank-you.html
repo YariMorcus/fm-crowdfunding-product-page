@@ -4,16 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link rel="stylesheet" href="scss/main.scss">
+
 </head>
 <body>
-    <!-- // TODO remove open attr. later on -->
-    <dialog class="modal modal-thank-you" open>
+
+  <nav class="navbar" role="navigation">
+    <a href="#" class="navbar__brand-link">
+        <img class="navbar__brand-img" src="./img/logo.svg" width="128" height="20" alt="Go to current page">
+    </a> <!-- .navbar__brand-link -->
+
+    <button id="js-navbar-toggle" class="navbar__toggler" aria-expanded="false" aria-controls="js-nav">
+        <span class="navbar__toggler-text">Menu</span>
+    </button> <!-- .navbar__toggler -->
+
+    <ul id="js-nav" class="nav">
+        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Discover</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Get started</a></li>
+    </ul> <!-- .nav -->
+</nav> <!-- .navbar -->
+
+    <!-- TODO remove id attr attr. when modal styling is implemented -->
+    <dialog id="js-modal" class="modal modal-thank-you">
       <img class="modal-thank-you__icon-check" src="img/icon-check.svg" alt="" width="64" height="64">
       <h2 class="modal-thank-you__title">Thanks for your support!</h2>
       <p class="modal-thank-you__paragraph">
         Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
       </p> <!-- .modal-thank-you__paragraph -->
-      <button class="btn btn--primary">Got it!</button>
+      <button class="btn btn--primary" aria-label="Close modal">Got it!</button>
     </dialog> <!-- .modal-thank-you -->
+
+     <!-- TODO Remove later on when modal styling is implemented -->
+  <script>
+    document.querySelector('.navbar__brand-link').addEventListener('click', function() {
+      const modal = document.querySelector('#js-modal');
+      modal.showModal();
+    })
+  </script>
 </body>
 </html>
