@@ -41,6 +41,10 @@
     padding: 4rem;
     max-width: 70rem;
   }
+
+  @include m.orientation-landscape {
+    top: 50%;
+  }
 }
 
 .back-modal {
