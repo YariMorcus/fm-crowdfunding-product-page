@@ -89,15 +89,19 @@ $progress-total-backed-accent-color:        $dark-cyan;
     1.8 Buttons
 */
 
-$btn-primary-text-color:                $white;
-$btn-primary-background-color:          $moderate-cyan;
-$btn-background-color--disabled:        hsl(0 0% 78% / 1);
+$btn-primary-text-color:                    $white;
+$btn-primary-background-color:              $moderate-cyan;
+$btn-primary-hover-background-color:        $dark-cyan;
+$btn-background-color--disabled:            hsl(0 0% 78% / 1);
 
-$btn-bookmark-background-color:         hsl(0, 0%, 92%);
-$btn-bookmark-icon-background-color:    hsl(0, 0%, 18%);
-$btn-bookmark-text-color:               hsl(0deg 0% 30.19%);
+$btn-bookmark-background-color:             hsl(0, 0%, 92%);
+$btn-bookmark-icon-background-color:        hsl(0, 0%, 18%);
+$btn-bookmark-text-color:                   hsl(0deg 0% 30.19%);
 
-$btn-focus-visible-outline-color:       $black;
+$btn-focus-visible-outline-color:           $black;
+
+$btn-modal-close-background-color:          hsl(0, 0%, 41%);
+$btn-modal-close-hover-background-color:    $black;
 
 /*------------------------------------------------------------------
 1. Colors
@@ -154,18 +158,21 @@ $modal-left-number-text-color:      $black;
 $modal-form-section-border-color:                       $nav-item-border-bottom-color;
 $modal-form-section-active-background-color:            hsl(0 0% 90%);
 $modal-form-divider-background-color:                   $statistics-divider-color;
+$modal-form-label-hover-text-color:                     $moderate-cyan;
 $modal-form-pledge-label-text-color:                    $moderate-cyan;
 $modal-form-radio-button-border-color:                  hsl(0, 0%, 55%);
+$modal-form-radio-button-hover-border-color:            $moderate-cyan;
 $modal-form-radio-button-focus-visible-outline-color:   $black;
 $modal-form-radio-button-checked-background-color:      $moderate-cyan;
 $modal-form-radio-label-text-color:                     $black;
 $modal-form-input-border-color:                         $modal-form-divider-background-color;
+$modal-form-input-focus-visible-border-color:           $moderate-cyan;
 $modal-form-input-dollar-sign-text-color:               $modal-form-input-border-color;
 $modal-form-fieldset-checked-outline-color:             $moderate-cyan;
 
 // Disabled states
 $form-section-disabled-border-color:                $project-section-border-color;
-$form-radio-button-disabled-border-color:           hsl(0 0% 85% / 1);
+$form-radio-button-disabled-border-color:           hsl(0 0% 85%);
 $form-radio-label-disabled-text-color:              $reward-section-disabled-title-text-color;
 $form-radio-label-pledge-disabled-text-color:       $reward-section-disabled-subtitle-text-color;
 $form-pledge-info-disabled-text-color:              $reward-section-disabled-info-text-color;

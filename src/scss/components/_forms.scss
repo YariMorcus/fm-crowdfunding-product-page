@@ -47,33 +47,6 @@
         'pledge-info pledge-info pledge-info'
         'pledge-form-inner-container pledge-form-inner-container pledge-form-inner-container';
     }
-
-    &--disabled {
-      & .pledge-form {
-        &__label-radio {
-          color: v.$form-radio-label-disabled-text-color;
-        }
-        &__label--pledge {
-          color: v.$form-radio-label-pledge-disabled-text-color;
-        }
-
-        &__pledge-info {
-          color: v.$form-pledge-info-disabled-text-color;
-        }
-
-        &__left {
-          color: v.$form-pledge-left-disabled-text-color;
-        }
-
-        &__left-number {
-          color: v.$form-pledge-left-number-disabled-text-color;
-        }
-      }
-
-      @include m.breakpoint-sm {
-        border: 0.1rem solid v.$form-section-disabled-border-color;
-      }
-    }
   }
 
   &__left {
@@ -93,6 +66,12 @@
       margin-bottom: 1rem;
       grid-area: radio-container;
       align-items: flex-end;
+    }
+
+    &:hover {
+      .pledge-form__radio-button {
+        border: 0.1rem solid v.$modal-form-radio-button-hover-border-color;
+      }
     }
   }
 
@@ -139,6 +118,11 @@
       margin-left: 2rem;
       flex-direction: row;
     }
+
+    &:hover {
+      cursor: pointer;
+      color: v.$modal-form-label-hover-text-color;
+    }
   }
 
   &__label--pledge {
@@ -164,6 +148,42 @@
     font-size: 2rem;
     font-weight: bold;
     color: v.$modal-left-number-text-color;
+  }
+}
+
+// Styling associated with a disabled form section
+.pledge-form__section--disabled .pledge-form {
+  &__radio-container:hover {
+    .pledge-form__radio-button {
+      border-color: v.$form-radio-button-disabled-border-color;
+    }
+  }
+  &__label-radio {
+    cursor: default;
+    color: v.$form-radio-label-disabled-text-color;
+
+    &:hover {
+      color: v.$form-radio-label-disabled-text-color;
+    }
+  }
+  &__label--pledge {
+    color: v.$form-radio-label-pledge-disabled-text-color;
+  }
+
+  &__pledge-info {
+    color: v.$form-pledge-info-disabled-text-color;
+  }
+
+  &__left {
+    color: v.$form-pledge-left-disabled-text-color;
+  }
+
+  &__left-number {
+    color: v.$form-pledge-left-number-disabled-text-color;
+  }
+
+  @include m.breakpoint-sm {
+    border: 0.1rem solid v.$form-section-disabled-border-color;
   }
 }
 
@@ -242,6 +262,10 @@
     font-weight: bold;
     border: 0.1rem solid v.$modal-form-input-border-color;
     border-radius: 3rem;
+
+    &:focus-visible {
+      outline: 0.1rem solid v.$modal-form-input-focus-visible-border-color;
+    }
   }
 
   &__input-wrapper {

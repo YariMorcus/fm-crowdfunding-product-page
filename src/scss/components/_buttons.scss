@@ -23,6 +23,10 @@
     @include m.breakpoint-sm {
       margin-bottom: 0;
     }
+
+    &:hover {
+      background-color: v.$btn-primary-hover-background-color;
+    }
   }
 
   &--back-this-project {
@@ -107,12 +111,9 @@
     top: -0.2rem;
     width: 4.4rem;
     height: 4.4rem;
-    background: center url('../img/icon-close-modal.svg') no-repeat transparent;
+    mask: center url('../img/icon-close-modal.svg') no-repeat;
+    background-color: v.$btn-modal-close-background-color;
     border: none;
-
-    &:focus-visible {
-      border-radius: 0.2rem;
-    }
 
     @include m.breakpoint-sm {
       right: -1.45rem;
@@ -121,6 +122,14 @@
     @include m.breakpoint-lg {
       top: -2rem;
       right: -3rem;
+    }
+
+    &:hover {
+      background-color: v.$btn-modal-close-hover-background-color;
+    }
+
+    &:focus-visible {
+      border-radius: 0.2rem;
     }
   }
 
