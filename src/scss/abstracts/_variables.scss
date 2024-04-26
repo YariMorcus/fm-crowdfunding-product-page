@@ -15,6 +15,7 @@
 
     2. Modal colors
         2.1 Form
+        2.2 Scrollbar
 
     3. Utility class colors
         3.1 Borders
@@ -170,6 +171,15 @@ $form-radio-label-pledge-disabled-text-color:       $reward-section-disabled-sub
 $form-pledge-info-disabled-text-color:              $reward-section-disabled-info-text-color;
 $form-pledge-left-disabled-text-color:              $form-pledge-info-disabled-text-color;
 $form-pledge-left-number-disabled-text-color:       $reward-section-disabled-rewards-left-number-text-color;
+
+/*------------------------------------------------------------------
+2. Modal colors
+    2.2 Scrollbar
+*/
+
+$modal-scrollbar-track-background-color: $dark-cyan;
+$modal-scrollbar-thumb-background-color: $moderate-cyan;
+
 
 /*------------------------------------------------------------------
 3. Utility class colors

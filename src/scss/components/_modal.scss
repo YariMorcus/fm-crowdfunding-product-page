@@ -11,6 +11,7 @@
   border-radius: 0.8rem;
   border: none;
   transform: translateY(-50%);
+  overflow-y: auto;
 
   &::backdrop {
     background-color: v.$modal-backdrop-background-color;
@@ -91,5 +92,21 @@
 .js {
   .modal {
     top: 50%;
+  }
+}
+
+@supports (scrollbar-color: auto) {
+  .modal {
+    scrollbar-color: v.$modal-scrollbar-thumb-background-color
+      v.$modal-scrollbar-track-background-color;
+  }
+}
+
+@supports selector(::webkit-scrollbar) {
+  .modal::-webkit-scrollbar-track {
+    background: v.$modal-scrollbar-track-background-color;
+  }
+  .modal::-webkit-scrollbar-thumb {
+    background: v.$modal-scrollbar-thumb-background-color;
   }
 }
