@@ -53,6 +53,10 @@
 
   &__icon-check {
     margin: 0 auto 2rem;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 3rem;
+    }
   }
 
   &__title {
@@ -62,6 +66,11 @@
   &__paragraph {
     margin-bottom: 4rem;
     color: v.$modal-text-color;
+  }
+
+  @include m.breakpoint-lg {
+    max-width: 50rem;
+    padding: 5rem;
   }
 }
 
