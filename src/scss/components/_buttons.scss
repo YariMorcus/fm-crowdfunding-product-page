@@ -46,12 +46,12 @@
     }
 
     @include m.breakpoint-md {
-      padding-right: 4rem;
+      padding-right: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-width: 18rem;
+      max-width: 16rem;
       background: v.$btn-bookmark-background-color;
     }
 
@@ -108,7 +108,8 @@
   }
 
   &--bookmarked {
-    // TODO add Bookmarked text and fix alignment
+    max-width: 18rem;
+
     & .btn__bookmark-icon {
       background: v.$btn-bookmarked-icon-container-background-color;
     }
