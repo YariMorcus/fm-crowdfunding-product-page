@@ -67,14 +67,19 @@ img {
   }
 }
 
-// .noscript {
-//   padding: 2rem 1rem;
-//   font-size: 2rem;
-//   color: v.$light-cyan;
-//   text-align: center;
-//   border-bottom: 1px solid;
+.noscript {
+  padding: 2rem;
+  font-size: 2rem;
+  color: v.$white;
+  text-align: center;
+  background-color: v.$dark-cyan;
 
-//   @include m.breakpoint-md() {
-//     padding: 2rem 0;
-//   }
-// }
+  @include m.breakpoint-md() {
+    padding: 2rem 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 65rem;
+  }
+}
