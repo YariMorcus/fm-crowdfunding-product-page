@@ -89,14 +89,18 @@ $progress-total-backed-accent-color:        $dark-cyan;
     1.8 Buttons
 */
 
-$btn-primary-text-color:                    $white;
-$btn-primary-background-color:              $moderate-cyan;
-$btn-primary-hover-background-color:        $dark-cyan;
-$btn-background-color--disabled:            hsl(0 0% 78% / 1);
+$btn-primary-text-color:                                    $white;
+$btn-primary-background-color:                              $moderate-cyan;
+$btn-primary-hover-background-color:                        $dark-cyan;
+$btn-background-color--disabled:                            hsl(0 0% 78% / 1);
 
-$btn-bookmark-background-color:             hsl(0, 0%, 92%);
-$btn-bookmark-icon-background-color:        hsl(0, 0%, 18%);
-$btn-bookmark-text-color:                   hsl(0deg 0% 30.19%);
+$btn-bookmark-background-color:                             hsl(0, 0%, 92%);
+$btn-bookmark-text-color:                                   hsl(0deg 0% 30.19%);
+$btn-bookmark-hover-text-color:                             $dark-gray;
+$btn-bookmark-icon-container-background-color:              hsl(0, 0%, 18%);
+$btn-bookmark-icon-background-color:                        hsl(0, 0%, 69%);
+$btn-bookmark-icon-container-hover-background-color:        $dark-gray;
+$btn-bookmark-icon-hover-background-color:                  $nav-item-border-bottom-color;
 
 $btn-focus-visible-outline-color:           $black;
 

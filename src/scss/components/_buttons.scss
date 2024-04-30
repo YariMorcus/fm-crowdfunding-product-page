@@ -38,8 +38,6 @@
   &__bookmark {
     width: 100%;
     height: 5.6rem;
-    background: center/contain url('../img/icon-bookmark.svg') no-repeat
-      v.$btn-bookmark-icon-background-color;
     border: 0;
     border-radius: 3rem;
 
@@ -58,12 +56,24 @@
     }
 
     &-icon {
+      position: relative;
       display: inline-block;
       width: 5.6rem;
       height: 5.6rem;
-      background: center/contain url('../img/icon-bookmark.svg') no-repeat
-        v.$btn-bookmark-icon-background-color;
+      background-color: v.$btn-bookmark-icon-container-background-color;
       border-radius: 3rem;
+
+      &::before {
+        content: '';
+        mask: url('../img/icon-bookmark.svg');
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 5.6rem;
+        height: 5.6rem;
+        background-color: v.$btn-bookmark-icon-background-color;
+      }
     }
 
     &-text {
@@ -82,6 +92,28 @@
         font-weight: bold;
       }
     }
+
+    &:hover {
+      // TODO create bookmarked state
+      .btn__bookmark-icon {
+        background-color: v.$btn-bookmark-icon-container-hover-background-color;
+      }
+      .btn__bookmark-icon::before {
+        background-color: v.$btn-bookmark-icon-hover-background-color;
+      }
+
+      .btn__bookmark-text {
+        color: v.$btn-bookmark-hover-text-color;
+      }
+    }
+
+    // &.--bookmarked {
+    //   & .btn__bookmark-icon {
+    //   }
+    //   & .btn__bookmark-text {
+    //     color: v.$dark-cyan;
+    //   }
+    // }
   }
 
   &--reward {
