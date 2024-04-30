@@ -21,7 +21,12 @@ body {
   text-rendering: optimizeSpeed;
   font-family: 'Commissioner', sans-serif;
   line-height: 1.7;
-  background: top left/contain url('../img/image-hero-mobile.jpg') no-repeat;
+  background: top 17.6rem left / contain url('../img/image-hero-mobile.jpg')
+    no-repeat;
+
+  @include m.breakpoint-sm-2 {
+    background-position-y: 10.8rem;
+  }
 
   @include m.breakpoint-lg {
     background-image: url('../img/image-hero-desktop.jpg');
@@ -67,6 +72,12 @@ img {
   }
 }
 
+.js {
+  body {
+    background-position-y: 0;
+  }
+}
+
 .noscript {
   padding: 2rem;
   font-size: 2rem;
@@ -80,6 +91,10 @@ img {
 
   &__text {
     margin: 0 auto;
-    max-width: 65rem;
+    max-width: 27rem;
+
+    @include m.breakpoint-sm-2 {
+      max-width: 65rem;
+    }
   }
 }
