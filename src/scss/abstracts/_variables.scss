@@ -92,20 +92,31 @@ $progress-total-backed-accent-color:        $dark-cyan;
 $btn-primary-text-color:                                    $white;
 $btn-primary-background-color:                              $moderate-cyan;
 $btn-primary-hover-background-color:                        $dark-cyan;
-$btn-background-color--disabled:                            hsl(0 0% 78% / 1);
 
+// Bookmark button
 $btn-bookmark-background-color:                             hsl(0, 0%, 92%);
 $btn-bookmark-text-color:                                   hsl(0deg 0% 30.19%);
 $btn-bookmark-hover-text-color:                             $dark-gray;
 $btn-bookmark-icon-container-background-color:              hsl(0, 0%, 18%);
 $btn-bookmark-icon-background-color:                        hsl(0, 0%, 69%);
 $btn-bookmark-icon-container-hover-background-color:        $dark-gray;
+
+// Bookmarked button (selected state)
+$btn-bookmarked-icon-container-background-color:            $dark-cyan;
+$btn-bookmarked-icon-background-color:                      $white;
+$btn-bookmarked-text-color:                                 $dark-cyan;
+
+// Bookmark hover state
 $btn-bookmark-icon-hover-background-color:                  $nav-item-border-bottom-color;
 
 $btn-focus-visible-outline-color:           $black;
 
+// Modal close button
 $btn-modal-close-background-color:          hsl(0, 0%, 41%);
 $btn-modal-close-hover-background-color:    $black;
+
+// Button disabled state
+$btn-background-color--disabled:                            hsl(0 0% 78% / 1);
 
 /*------------------------------------------------------------------
 1. Colors

@@ -94,7 +94,6 @@
     }
 
     &:hover {
-      // TODO create bookmarked state
       .btn__bookmark-icon {
         background-color: v.$btn-bookmark-icon-container-hover-background-color;
       }
@@ -106,14 +105,21 @@
         color: v.$btn-bookmark-hover-text-color;
       }
     }
+  }
 
-    // &.--bookmarked {
-    //   & .btn__bookmark-icon {
-    //   }
-    //   & .btn__bookmark-text {
-    //     color: v.$dark-cyan;
-    //   }
-    // }
+  &--bookmarked {
+    // TODO add Bookmarked text and fix alignment
+    & .btn__bookmark-icon {
+      background: v.$btn-bookmarked-icon-container-background-color;
+    }
+
+    & .btn__bookmark-text {
+      color: v.$btn-bookmarked-text-color;
+    }
+
+    & .btn__bookmark-icon::before {
+      background-color: v.$btn-bookmarked-icon-background-color;
+    }
   }
 
   &--reward {
