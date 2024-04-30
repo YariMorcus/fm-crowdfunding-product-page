@@ -2,6 +2,21 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
+/*
+* TABLE OF CONTENTS
+*
+* 1 - Modal general
+* 2 - Modal thank you
+*
+*/
+
+/*
+***
+* 1 - Modal general
+***
+* Section contains general modal CSS
+*/
+
 .modal {
   position: fixed;
   top: 50%;
@@ -47,6 +62,14 @@
   }
 }
 
+/*
+***
+* 2 - Modal thank you
+***
+* Section contains modal thank you CSS
+* (visible when form is submitted)
+*/
+
 .modal-thank-you {
   padding: 4rem 2.5rem;
   text-align: center;
@@ -73,6 +96,14 @@
     padding: 5rem;
   }
 }
+
+/*
+***
+* 2 - Modal thank you
+***
+* Section contains modal thank you CSS
+* (visible when form is submitted)
+*/
 
 .back-modal {
   &__intro {

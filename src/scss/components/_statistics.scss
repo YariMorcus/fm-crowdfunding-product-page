@@ -2,6 +2,20 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
+/*
+* TABLE OF CONTENTS
+*
+* 1 - General
+*
+*/
+
+/*
+***
+* 1 - General
+***
+* Section contains general statistics CSS
+*/
+
 .statistics {
   margin: 0 2.5rem 3rem;
   padding: 3rem;
@@ -47,6 +61,7 @@
     }
   }
 
+  // Progress bar
   &__progress-total-backed {
     width: 100%;
     height: 2rem;

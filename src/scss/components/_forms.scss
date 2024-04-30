@@ -2,6 +2,23 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
+/*
+* TABLE OF CONTENTS
+*
+* 1 - General
+* 2 - Pledge form disabled state
+* 3 - Pledge form active state
+* 4 - Pledge form section no reward
+*
+*/
+
+/*
+***
+* 1 - General
+***
+* Section contains general pledge form CSS
+*/
+
 .pledge-form {
   &__inner-container {
     display: none;
@@ -152,7 +169,14 @@
   }
 }
 
-// Styling associated with a disabled form section
+/*
+***
+* 2 - Pledge form disabled state
+***
+* CSS related to pledge form disabled state
+* (user not capable of filling in the form)
+*/
+
 .pledge-form__section--disabled .pledge-form {
   &__radio-container:hover {
     .pledge-form__radio-button {
@@ -188,7 +212,14 @@
   }
 }
 
-// Styling associated with an active form section
+/*
+***
+* 3 - Pledge form active state
+***
+* CSS related to pledge form active state
+* (when user selected a reward --→ show form)
+*/
+
 .pledge-form__section.is-active .pledge-form {
   &__inner-container {
     display: block;
@@ -295,6 +326,13 @@
     }
   }
 }
+
+/*
+***
+* 4 - Pledge form section no reward
+***
+* CSS related to the pledge form section that has no reward
+*/
 
 // Do not add margin bottom when there is no reward associated with the pledge
 .pledge-form__section--no-reward {

@@ -2,6 +2,22 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
+/*
+* TABLE OF CONTENTS
+*
+* 1 - Project
+* 2 - Reward
+* 3 - Reward disabled state
+*
+*/
+
+/*
+***
+* 1 - Project
+***
+* Section contains general project CSS
+*/
+
 .project {
   margin: 0 2.5rem 6rem;
   padding: 3rem 2rem;
@@ -52,6 +68,13 @@
     max-width: 70rem;
   }
 }
+
+/*
+***
+* 2 - Reward
+***
+* Section contains general reward CSS
+*/
 
 .reward {
   &__header {
@@ -107,32 +130,40 @@
     font-size: 1.6rem;
     color: v.$reward-section-rewards-left-text-color;
   }
+}
 
-  &--disabled {
-    @include m.breakpoint-sm {
-      border: 0.1rem solid v.$project-section-border-color;
+/*
+***
+* 3 - Reward disabled state
+***
+* CSS related to reward disabled state
+* (user not capable of selecting the reward)
+*/
+
+.reward--disabled {
+  @include m.breakpoint-sm {
+    border: 0.1rem solid v.$project-section-border-color;
+  }
+
+  .reward {
+    &__title {
+      color: v.$reward-section-disabled-title-text-color;
     }
 
-    .reward {
-      &__title {
-        color: v.$reward-section-disabled-title-text-color;
-      }
+    &__subtitle {
+      color: v.$reward-section-disabled-subtitle-text-color;
+    }
 
-      &__subtitle {
-        color: v.$reward-section-disabled-subtitle-text-color;
-      }
+    &__info {
+      color: v.$reward-section-disabled-info-text-color;
+    }
 
-      &__info {
-        color: v.$reward-section-disabled-info-text-color;
-      }
+    &__rewards-left {
+      color: v.$reward-section-disabled-rewards-left-number-text-color;
+    }
 
-      &__rewards-left {
-        color: v.$reward-section-disabled-rewards-left-number-text-color;
-      }
-
-      &__rewards-left-text {
-        color: v.$reward-section-disabled-rewards-left-text-color;
-      }
+    &__rewards-left-text {
+      color: v.$reward-section-disabled-rewards-left-text-color;
     }
   }
 }
