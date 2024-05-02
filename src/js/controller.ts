@@ -1,4 +1,6 @@
+import AboutView from './views/AboutView';
 import HTMLRootView from './views/HTMLRootView';
+import HeaderView from './views/HeaderView';
 import NavigationView from './views/NavigationView';
 
 /**
@@ -12,6 +14,10 @@ const navigationController = function (): void {
   NavigationView.toggleOverlay();
 };
 
+const modalController = function (): void {
+  alert('modal controller 😀');
+};
+
 /**
  * @class App
  * @description class provides all JS functionality for the application (init function)
@@ -23,6 +29,9 @@ class App {
     HTMLRootView.indicateJSAvailable();
 
     NavigationView.addHandlerClick(navigationController);
+
+    HeaderView.addClickHandler(modalController);
+    AboutView.addClickHandler(modalController);
   }
 }
 
