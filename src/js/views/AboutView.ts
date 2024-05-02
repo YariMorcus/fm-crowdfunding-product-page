@@ -14,9 +14,9 @@ class AboutView {
    */
   addClickHandler(handler: Function): void {
     this.aboutSection.addEventListener('click', e => {
-      const rewardButton = (<HTMLElement>e.target).classList.contains(
-        'btn--reward'
-      );
+      const rewardButton =
+        (<HTMLElement>e.target).classList.contains('btn--reward') &&
+        !(<HTMLElement>e.target).classList.contains('btn--disabled');
 
       if (!rewardButton) return;
 
