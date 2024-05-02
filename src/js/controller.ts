@@ -1,3 +1,4 @@
+import HTMLRootView from './views/HTMLRootView';
 import NavigationView from './views/NavigationView';
 
 /**
@@ -17,8 +18,9 @@ const navigationController = function (): void {
  */
 class App {
   constructor() {
-    // TODO add line underneath to view later on
-    document.documentElement.classList.add('js');
+    // If JS is NOT available, show navigation menu
+    // by default by NOT adding .js to <html>
+    HTMLRootView.indicateJSAvailable();
 
     NavigationView.addHandlerClick(navigationController);
   }
