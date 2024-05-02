@@ -115,6 +115,15 @@
     text-transform: capitalize;
     border-bottom: 0;
 
+    &:focus-visible {
+      outline: 0.2rem solid;
+      outline-offset: 0.7rem;
+
+      @include m.breakpoint-md {
+        outline-offset: 0;
+      }
+    }
+
     @include m.breakpoint-md {
       padding: 1.5rem 2rem;
       display: block;
