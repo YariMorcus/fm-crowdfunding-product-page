@@ -1,6 +1,7 @@
 import AboutView from './views/AboutView';
 import HTMLRootView from './views/HTMLRootView';
 import HeaderView from './views/HeaderView';
+import ModalView from './views/ModalView';
 import NavigationView from './views/NavigationView';
 
 /**
@@ -15,7 +16,7 @@ const navigationController = function (): void {
 };
 
 const modalController = function (): void {
-  alert('modal controller 😀');
+  ModalView.openModal();
 };
 
 /**
