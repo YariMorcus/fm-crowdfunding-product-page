@@ -24,8 +24,12 @@ const modalCloseController = function (): void {
   ModalView.closeModal();
 };
 
-// TODO add JSDoc comment for controller
-const modalController = function (): void {
+/**
+ * modalOpenController
+ *
+ * Provides open modal functionality
+ */
+const modalOpenController = function (): void {
   ModalView.openModal();
   ModalView.addCloseHandler(modalCloseController);
 };
@@ -42,8 +46,8 @@ class App {
 
     NavigationView.addHandlerClick(navigationController);
 
-    HeaderView.addClickHandler(modalController);
-    AboutView.addClickHandler(modalController);
+    HeaderView.addClickHandler(modalOpenController);
+    AboutView.addClickHandler(modalOpenController);
   }
 }
 
