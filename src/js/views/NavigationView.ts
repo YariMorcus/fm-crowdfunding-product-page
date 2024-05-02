@@ -1,10 +1,15 @@
 /**
  * @class NavigationView
  * @description Class provides all functionality for the mobile navigation
+ * @property {HTMLDivElement} navOverlayDiv - the div for the nav overlay
  * @property {HTMLButtonElement} toggleButton - the toggle button
  * @property {HTMLUListElement} menu - the navigation menu
  */
 class NavigationView {
+  private readonly navOverlayDiv = document.querySelector(
+    '#js-nav-overlay'
+  ) as HTMLDivElement;
+
   private readonly toggleButton = document.querySelector(
     '#js-navbar-toggle'
   ) as HTMLButtonElement;
@@ -40,6 +45,13 @@ class NavigationView {
    */
   toggleMenu(): void {
     this.menu.classList.toggle('is-expanded');
+  }
+
+  /**
+   * Toggle navigation overlay (darker linear gradient background)
+   */
+  toggleOverlay(): void {
+    this.navOverlayDiv.classList.toggle('nav-overlay--mobile');
   }
 }
 

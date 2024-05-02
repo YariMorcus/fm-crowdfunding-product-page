@@ -8,6 +8,7 @@ import NavigationView from './views/NavigationView';
 const navigationController = function (): void {
   NavigationView.toggleAriaExpanded();
   NavigationView.toggleMenu();
+  NavigationView.toggleOverlay();
 };
 
 /**
