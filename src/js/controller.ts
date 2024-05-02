@@ -15,8 +15,19 @@ const navigationController = function (): void {
   NavigationView.toggleOverlay();
 };
 
+/**
+ * modalCloseController
+ *
+ * Provides close modal functionality
+ */
+const modalCloseController = function (): void {
+  ModalView.closeModal();
+};
+
+// TODO add JSDoc comment for controller
 const modalController = function (): void {
   ModalView.openModal();
+  ModalView.addCloseHandler(modalCloseController);
 };
 
 /**
