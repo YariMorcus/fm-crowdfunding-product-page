@@ -1,0 +1,344 @@
+// Import modules
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/*
+* TABLE OF CONTENTS
+*
+* 1 - General
+* 2 - Pledge form disabled state
+* 3 - Pledge form active state
+* 4 - Pledge form section no reward
+*
+*/
+
+/*
+***
+* 1 - General
+***
+* Section contains general pledge form CSS
+*/
+
+.pledge-form {
+  &__inner-container {
+    display: none;
+
+    @include m.breakpoint-lg {
+      grid-area: pledge-form-inner-container;
+    }
+  }
+
+  &__section {
+    margin: 0 -1.4rem;
+    padding: 3rem 1.4rem;
+    border: 0;
+    border-top: 1px solid v.$project-section-border-color;
+
+    // Indicate that section is active when radio button inside is pressed
+    // (user decision)
+    &:has(.pledge-form__radio-button:checked) {
+      background-color: v.$modal-form-section-active-background-color;
+      border-color: transparent;
+      border-radius: 0.4rem;
+
+      // On larger screens: replace background color with outline
+      // (more space available for outline)
+      @include m.breakpoint-sm {
+        background-color: initial;
+        outline: 0.2rem solid v.$modal-form-fieldset-checked-outline-color;
+      }
+    }
+
+    @include m.breakpoint-sm {
+      margin: 0 0 2rem;
+      padding: 3rem;
+      border: 0.1rem solid v.$project-section-border-color;
+      border-radius: 0.5rem;
+    }
+
+    @include m.breakpoint-lg {
+      padding: 2.5rem;
+      display: grid;
+      grid-template-areas:
+        'radio-container radio-container pledge-left'
+        'pledge-info pledge-info pledge-info'
+        'pledge-form-inner-container pledge-form-inner-container pledge-form-inner-container';
+    }
+  }
+
+  &__left {
+    @include m.breakpoint-lg {
+      margin-bottom: 1rem;
+      grid-area: pledge-left;
+      justify-self: end;
+    }
+  }
+
+  &__radio-container {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 1rem;
+      grid-area: radio-container;
+      align-items: flex-end;
+    }
+
+    &:hover {
+      .pledge-form__radio-button {
+        border: 0.1rem solid v.$modal-form-radio-button-hover-border-color;
+      }
+    }
+  }
+
+  &__radio-button {
+    position: relative;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.1rem solid v.$modal-form-radio-button-border-color;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 50%;
+      height: 50%;
+      transform: translate(-50%, -50%);
+      background-color: v.$modal-form-radio-button-checked-background-color;
+      border-radius: 100%;
+    }
+
+    &:disabled {
+      border: 0.1rem solid v.$form-radio-button-disabled-border-color;
+    }
+
+    &:focus-visible {
+      outline: solid 0.2rem
+        v.$modal-form-radio-button-focus-visible-outline-color;
+    }
+  }
+
+  &__label-radio {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: bold;
+    color: v.$modal-form-radio-label-text-color;
+
+    @include m.breakpoint-lg {
+      margin-left: 2rem;
+      flex-direction: row;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: v.$modal-form-label-hover-text-color;
+    }
+  }
+
+  &__label--pledge {
+    font-weight: 500;
+    color: v.$modal-form-pledge-label-text-color;
+
+    @include m.breakpoint-lg {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__pledge-info {
+    margin-bottom: 2rem;
+
+    @include m.breakpoint-lg {
+      grid-area: pledge-info;
+      margin-left: 4.5rem;
+    }
+  }
+
+  &__left-number {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: v.$modal-left-number-text-color;
+  }
+}
+
+/*
+***
+* 2 - Pledge form disabled state
+***
+* CSS related to pledge form disabled state
+* (user not capable of filling in the form)
+*/
+
+.pledge-form__section--disabled .pledge-form {
+  &__radio-container:hover {
+    .pledge-form__radio-button {
+      border-color: v.$form-radio-button-disabled-border-color;
+    }
+  }
+  &__label-radio {
+    cursor: default;
+    color: v.$form-radio-label-disabled-text-color;
+
+    &:hover {
+      color: v.$form-radio-label-disabled-text-color;
+    }
+  }
+  &__label--pledge {
+    color: v.$form-radio-label-pledge-disabled-text-color;
+  }
+
+  &__pledge-info {
+    color: v.$form-pledge-info-disabled-text-color;
+  }
+
+  &__left {
+    color: v.$form-pledge-left-disabled-text-color;
+  }
+
+  &__left-number {
+    color: v.$form-pledge-left-number-disabled-text-color;
+  }
+
+  @include m.breakpoint-sm {
+    border: 0.1rem solid v.$form-section-disabled-border-color;
+  }
+}
+
+/*
+***
+* 3 - Pledge form active state
+***
+* CSS related to pledge form active state
+* (when user selected a reward --→ show form)
+*/
+
+.pledge-form__section.is-active .pledge-form {
+  &__inner-container {
+    display: block;
+
+    @include m.breakpoint-lg {
+      display: grid;
+      margin-left: 4.5rem;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas:
+        'form-divider form-divider form-divider'
+        'form-label . input-pledge-container';
+    }
+  }
+
+  &__left {
+    margin-bottom: 2rem;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__divider {
+    margin-bottom: 3rem;
+    grid-area: form-divider;
+    height: 0.1rem;
+    background-color: v.$modal-form-divider-background-color;
+    border: none;
+
+    // Show divider across entire width
+    // Negative values are reversed padding values
+    @include m.breakpoint-sm {
+      margin-right: -3rem;
+      margin-left: -3rem;
+    }
+
+    @include m.breakpoint-lg {
+      margin-bottom: 2.5rem;
+      margin-left: -7rem;
+      margin-right: -2.5rem;
+    }
+  }
+
+  &__label {
+    margin-bottom: 2rem;
+    display: block;
+    text-align: center;
+
+    @include m.breakpoint-lg {
+      margin-bottom: 0;
+      grid-area: form-label;
+      align-self: center;
+      text-align: left;
+    }
+  }
+
+  &__input-pledge-container {
+    @include m.breakpoint-sm {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2rem;
+    }
+
+    @include m.breakpoint-lg {
+      grid-area: input-pledge-container;
+    }
+  }
+
+  &__input {
+    padding: 1.5rem 2rem 1.5rem 3.5rem;
+    width: 100%;
+    font-weight: bold;
+    border: 0.1rem solid v.$modal-form-input-border-color;
+    border-radius: 3rem;
+
+    &:focus-visible {
+      outline: 0.1rem solid v.$modal-form-input-focus-visible-border-color;
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    display: block;
+
+    &::before {
+      content: '\0024';
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      display: block;
+      width: 2rem;
+      height: 4.8rem;
+      font-weight: bold;
+      color: v.$modal-form-input-dollar-sign-text-color;
+      line-height: 4.8rem;
+      background-color: transparent;
+      transform: translateY(-50%);
+    }
+
+    @include m.breakpoint-sm {
+      margin-bottom: 0;
+      width: 40%;
+    }
+  }
+}
+
+/*
+***
+* 4 - Pledge form section no reward
+***
+* CSS related to the pledge form section that has no reward
+*/
+
+// Do not add margin bottom when there is no reward associated with the pledge
+.pledge-form__section--no-reward {
+  .pledge-form {
+    &__pledge-info {
+      margin-bottom: 0;
+    }
+  }
+}

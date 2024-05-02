@@ -19,8 +19,18 @@ body {
   display: flex;
   flex-direction: column;
   text-rendering: optimizeSpeed;
-  font-family: 'Manrope', sans-serif;
-  line-height: 1.5;
+  font-family: 'Commissioner', sans-serif;
+  line-height: 1.7;
+  background: top 17.6rem left / contain url('../img/image-hero-mobile.jpg')
+    no-repeat;
+
+  @include m.breakpoint-sm-2 {
+    background-position-y: 10.8rem;
+  }
+
+  @include m.breakpoint-lg {
+    background-image: url('../img/image-hero-desktop.jpg');
+  }
 }
 
 main {
@@ -29,9 +39,19 @@ main {
   flex: 1;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
+  border-bottom: 0.1rem solid;
+
+  &:focus-visible {
+    border-radius: 0.1rem;
+    outline: 0.2rem solid v.$white;
+  }
+
+  /* A elements that don't have a class get default styles */
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
 }
 
 /* Make images easier to work with */
@@ -52,30 +72,29 @@ img {
   }
 }
 
-.footer {
-  padding: 0 1.28rem 1.28rem;
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-
-  // &__link {
-  //   &:hover {
-  //   }
-
-  //   &:focus-visible {
-  //     border-radius: 1px;
-  //   }
-  // }
+.js {
+  body {
+    background-position-y: 0;
+  }
 }
 
-// .noscript {
-//   padding: 2rem 1rem;
-//   font-size: 2rem;
-//   color: v.$light-cyan;
-//   text-align: center;
-//   border-bottom: 1px solid;
+.noscript {
+  padding: 2rem;
+  font-size: 2rem;
+  color: v.$white;
+  text-align: center;
+  background-color: v.$dark-cyan;
 
-//   @include m.breakpoint-md() {
-//     padding: 2rem 0;
-//   }
-// }
+  @include m.breakpoint-md() {
+    padding: 2rem 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 27rem;
+
+    @include m.breakpoint-sm-2 {
+      max-width: 65rem;
+    }
+  }
+}

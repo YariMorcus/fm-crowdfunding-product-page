@@ -5,9 +5,30 @@
   }
 }
 
-// Tablet - 768px
+// Mobile 2 - 480px
+@mixin breakpoint-sm-2() {
+  @media (min-width: 30rem) {
+    @content;
+  }
+}
+
+// Tablet - 700px
 @mixin breakpoint-md() {
-  @media (min-width: 48rem) {
+  @media (min-width: 43.75rem) {
+    @content;
+  }
+}
+
+// Desktop - 843px
+@mixin breakpoint-lg() {
+  @media (min-width: 52.688rem) {
+    @content;
+  }
+}
+
+// Large desktop - 1200px
+@mixin breakpoint-xl() {
+  @media (min-width: 75rem) {
     @content;
   }
 }

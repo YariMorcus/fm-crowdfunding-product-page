@@ -33,3 +33,6 @@ Primary use:    Portfolio project
 
 // Import layout/_index.scss entrypoint file
 @use 'layout';
+
+// Import base/_utilities.scss
+@use 'base/utilities';

@@ -4,6 +4,21 @@
         1.1 Primary
         1.2 Neutral
         1.3 White
+        1.4 Navigation
+        1.5 Header
+        1.6 Statistics
+        1.7 Progress
+        1.8 Buttons
+        1.9 Project section
+        2.0 Reward section
+        2.2 Footer
+
+    2. Modal colors
+        2.1 Form
+        2.2 Scrollbar
+
+    3. Utility class colors
+        3.1 Borders
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -20,7 +35,7 @@ $dark-cyan:             hsl(176, 72%, 28%);
 */
 
 $black:                 hsl(0, 0%, 0%);
-$dark-gray:             hsl(0, 0%, 48%);
+$dark-gray:             hsl(0, 0%, 45%);
 
 /*------------------------------------------------------------------
 1. Colors
@@ -28,3 +43,169 @@ $dark-gray:             hsl(0, 0%, 48%);
 */
 
 $white:                 hsl(0, 0%, 100%);
+
+/*------------------------------------------------------------------
+1. Colors
+    1.4 Navigation
+*/
+
+$nav-background-color:                      $white;
+$nav-item-border-bottom-color:              hsl(0, 0%, 75%);
+$nav-link-text-color:                       $black;
+$nav-link-text-color-horizontal-menu:       $white;
+$nav-overlay-gradient-start-color:          rgba(20, 20, 20, 0.7);
+$nav-overlay-gradient-end-color:            rgba(0, 212, 255, 0);
+$nav-overlay-fallback-background-color:     rgb(20, 20, 20);
+
+/*------------------------------------------------------------------
+1. Colors
+    1.5 Header
+*/
+
+$header-border-color:                hsl(0, 0%, 89%);
+$header-background-color:            $white;
+$header-intro-text-color:            $dark-gray;
+
+/*------------------------------------------------------------------
+1. Colors
+    1.6 Statistics
+*/
+
+$statistics-border-color:           $header-border-color;
+$statistics-background-color:       $white;
+$statistics-text-color:             $dark-gray;
+$statistics-number-color:           $black;
+$statistics-divider-color:          $nav-item-border-bottom-color;
+
+/*------------------------------------------------------------------
+1. Colors
+    1.7 Progress
+*/
+
+$progress-total-backed-accent-color:        $dark-cyan;
+
+/*------------------------------------------------------------------
+1. Colors
+    1.8 Buttons
+*/
+
+$btn-primary-text-color:                                    $white;
+$btn-primary-background-color:                              $moderate-cyan;
+$btn-primary-hover-background-color:                        $dark-cyan;
+
+// Bookmark button
+$btn-bookmark-background-color:                             hsl(0, 0%, 92%);
+$btn-bookmark-text-color:                                   hsl(0deg 0% 30.19%);
+$btn-bookmark-hover-text-color:                             $dark-gray;
+$btn-bookmark-icon-container-background-color:              hsl(0, 0%, 18%);
+$btn-bookmark-icon-background-color:                        hsl(0, 0%, 69%);
+$btn-bookmark-icon-container-hover-background-color:        $dark-gray;
+
+// Bookmarked button (selected state)
+$btn-bookmarked-icon-container-background-color:            $dark-cyan;
+$btn-bookmarked-icon-background-color:                      $white;
+$btn-bookmarked-text-color:                                 $dark-cyan;
+
+// Bookmark hover state
+$btn-bookmark-icon-hover-background-color:                  $nav-item-border-bottom-color;
+
+$btn-focus-visible-outline-color:           $black;
+
+// Modal close button
+$btn-modal-close-background-color:          hsl(0, 0%, 41%);
+$btn-modal-close-hover-background-color:    $black;
+
+// Button disabled state
+$btn-background-color--disabled:                            hsl(0 0% 78% / 1);
+
+/*------------------------------------------------------------------
+1. Colors
+    1.9 Project section
+*/
+
+$project-section-border-color:              hsl(0, 0%, 80%);
+$project-section-background-color:          $white;
+$project-section-text-color:                $dark-gray;
+$project-section-title-text-color:          $black;
+
+/*------------------------------------------------------------------
+1. Colors
+    2.0 Reward section
+*/
+
+$reward-section-border-color:                       $project-section-border-color;
+$reward-section-title-text-color:                   $black;
+$reward-section-subtitle-text-color:                $moderate-cyan;
+$reward-section-rewards-left-text-color:            $dark-gray;
+$reward-section-rewards-left-number-text-color:     $black;
+
+// Disabled
+$reward-section-disabled-border-color:                          $project-section-border-color;
+$reward-section-disabled-title-text-color:                      hsl(0 0% 55% / 1);
+$reward-section-disabled-subtitle-text-color:                   hsl(176 50% 63% / 1);
+$reward-section-disabled-info-text-color:                       hsl(0 0% 68% / 1);
+$reward-section-disabled-rewards-left-number-text-color:        hsl(0, 0%, 45%);
+$reward-section-disabled-rewards-left-text-color:               hsl(0 0% 68% / 1);
+
+/*------------------------------------------------------------------
+1. Colors
+    2.2 Footer
+*/
+
+$footer-link-text-visited-color:        hsl(300, 100%, 25%);
+$footer-link-text-hover-color:          $dark-cyan;
+$footer-link-text-active-color:         hsl(0, 100%, 45%);
+$footer-link-focus-visible-color:       $black;
+
+/*------------------------------------------------------------------
+2. Modal colors
+*/
+
+$modal-backdrop-background-color:   hsla(0deg 0% 0% / 40%);
+$modal-text-color:                  $dark-gray;
+$modal-left-number-text-color:      $black;
+
+/*------------------------------------------------------------------
+2. Modal colors
+    2.1 Form
+*/
+
+$modal-form-section-border-color:                       $nav-item-border-bottom-color;
+$modal-form-section-active-background-color:            hsl(0 0% 90%);
+$modal-form-divider-background-color:                   $statistics-divider-color;
+$modal-form-label-hover-text-color:                     $moderate-cyan;
+$modal-form-pledge-label-text-color:                    $moderate-cyan;
+$modal-form-radio-button-border-color:                  hsl(0, 0%, 55%);
+$modal-form-radio-button-hover-border-color:            $moderate-cyan;
+$modal-form-radio-button-focus-visible-outline-color:   $black;
+$modal-form-radio-button-checked-background-color:      $moderate-cyan;
+$modal-form-radio-label-text-color:                     $black;
+$modal-form-input-border-color:                         $modal-form-divider-background-color;
+$modal-form-input-focus-visible-border-color:           $moderate-cyan;
+$modal-form-input-dollar-sign-text-color:               $modal-form-input-border-color;
+$modal-form-fieldset-checked-outline-color:             $moderate-cyan;
+
+// Disabled states
+$form-section-disabled-border-color:                $project-section-border-color;
+$form-radio-button-disabled-border-color:           hsl(0 0% 85%);
+$form-radio-label-disabled-text-color:              $reward-section-disabled-title-text-color;
+$form-radio-label-pledge-disabled-text-color:       $reward-section-disabled-subtitle-text-color;
+$form-pledge-info-disabled-text-color:              $reward-section-disabled-info-text-color;
+$form-pledge-left-disabled-text-color:              $form-pledge-info-disabled-text-color;
+$form-pledge-left-number-disabled-text-color:       $reward-section-disabled-rewards-left-number-text-color;
+
+/*------------------------------------------------------------------
+2. Modal colors
+    2.2 Scrollbar
+*/
+
+$modal-scrollbar-track-background-color: $dark-cyan;
+$modal-scrollbar-thumb-background-color: $moderate-cyan;
+
+
+/*------------------------------------------------------------------
+3. Utility class colors
+    3.1 Borders
+*/
+
+$border-right-light-grey-color:    $nav-item-border-bottom-color;

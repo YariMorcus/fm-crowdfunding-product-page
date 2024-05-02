@@ -1,0 +1,44 @@
+// Import modules
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/*
+* TABLE OF CONTENTS
+*
+* 1 - General
+*
+*/
+
+/*
+***
+* 1 - General
+***
+* Section contains general footer CSS
+*/
+
+.footer {
+  padding: 0 1.28rem 1.28rem;
+  font-family: 'Commissioner', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+
+  &__link {
+    &:visited {
+      color: v.$footer-link-text-visited-color;
+    }
+
+    &:hover {
+      color: v.$footer-link-text-hover-color;
+    }
+
+    &:active {
+      color: v.$footer-link-text-active-color;
+    }
+
+    &:focus-visible {
+      border-radius: 0.1rem;
+      outline: solid 0.2rem v.$footer-link-focus-visible-color;
+      outline-offset: 0.2rem;
+    }
+  }
+}
