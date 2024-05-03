@@ -39,7 +39,25 @@ class ModalFormView {
       '.pledge-form__section'
     ) as HTMLElement;
 
+    // If there is no reward with the pledge, return early
+    // (there is no form associated with this section)
+    if (!this.#isIsPledgeWithReward(FORM_SECTION)) return;
+
+    // Show form if a reward is applicable
     FORM_SECTION.classList.add('is-active');
+  }
+
+  /**
+   * Check if there is a reward associated with the pledge
+   *
+   * @param {HTMLElement} formSection - the form section associated with the selected radio button
+   * @returns {boolean} false if there is NO reward associated with the pledge, true otherwise
+   */
+  #isIsPledgeWithReward(formSection: HTMLElement): boolean {
+    if (formSection.classList.contains('pledge-form__section--no-reward'))
+      return false;
+
+    return true;
   }
 }
 
