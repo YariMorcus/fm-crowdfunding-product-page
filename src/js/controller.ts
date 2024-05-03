@@ -23,6 +23,8 @@ const navigationController = function (): void {
  */
 const modalFormController = function (radioButtonID: string): void {
   ModalFormView.showForm(radioButtonID);
+
+  ModalFormView.logCurrentActiveFormSection(radioButtonID);
 };
 
 /**

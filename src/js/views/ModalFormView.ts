@@ -2,11 +2,14 @@
  * @class ModalFormView
  * @description Class provides all functionality for modal form
  * @property {HTMLFormElement} form - the form element within the modal
+ * @property {string | null} previousActiveFormSectionID - the previously active form section
  */
 class ModalFormView {
   private readonly form = document.querySelector(
     '#js-pledge-form'
   ) as HTMLFormElement;
+
+  private previousActiveFormSectionID: string | null = null;
 
   /**
    * Listen for click event on radio button and call
@@ -43,8 +46,39 @@ class ModalFormView {
     // (there is no form associated with this section)
     if (!this.#isIsPledgeWithReward(FORM_SECTION)) return;
 
+    /**
+     * Form active? Hide it first before showing
+     * the new form
+     */
+    if (this.previousActiveFormSectionID) this.#hideForm();
+
     // Show form if a reward is applicable
     FORM_SECTION.classList.add('is-active');
+  }
+
+  /**
+   * Store currently active form section
+   * @param {string} radioButtonId - the ID of the radio button
+   */
+  logCurrentActiveFormSection(radioButtonId: string): void {
+    const RADIO_BUTTON_EL = document.getElementById(
+      radioButtonId
+    ) as HTMLElement;
+
+    this.previousActiveFormSectionID = (<HTMLElement>(
+      RADIO_BUTTON_EL.closest('.pledge-form__section')
+    )).id;
+  }
+
+  /**
+   * Hide the currently active form in the modal
+   */
+  #hideForm(): void {
+    const PREVIOUS_ACTIVE_FORM_SECTION = document.getElementById(
+      this.previousActiveFormSectionID!
+    ) as HTMLFieldSetElement;
+
+    PREVIOUS_ACTIVE_FORM_SECTION.classList.remove('is-active');
   }
 
   /**
