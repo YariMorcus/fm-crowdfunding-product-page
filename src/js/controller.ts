@@ -1,6 +1,7 @@
 import AboutView from './views/AboutView';
 import HTMLRootView from './views/HTMLRootView';
 import HeaderView from './views/HeaderView';
+import ModalFormView from './views/ModalFormView';
 import ModalView from './views/ModalView';
 import NavigationView from './views/NavigationView';
 
@@ -13,6 +14,15 @@ const navigationController = function (): void {
   NavigationView.toggleAriaExpanded();
   NavigationView.toggleMenu();
   NavigationView.toggleOverlay();
+};
+
+/**
+ * modalFormController
+ *
+ * Provides the form functionality in the modal
+ */
+const modalFormController = function (radioButtonID: string): void {
+  ModalFormView.showForm(radioButtonID);
 };
 
 /**
@@ -47,7 +57,10 @@ class App {
     NavigationView.addHandlerClick(navigationController);
 
     HeaderView.addClickHandler(modalOpenController);
+
     AboutView.addClickHandler(modalOpenController);
+
+    ModalFormView.addRadioClickHandler(modalFormController);
   }
 }
 
