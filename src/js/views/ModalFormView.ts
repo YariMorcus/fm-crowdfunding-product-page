@@ -79,10 +79,14 @@ class ModalFormView extends View {
      * Form active? Hide it first before showing
      * the new form
      */
+
     if (this.previousActiveFormSectionID) this.#hideForm();
 
     // Show form if a reward is applicable
     FORM_SECTION.classList.add('is-active');
+
+    // Indicate that form field is required
+    this.#toggleRequiredField(FORM_SECTION);
   }
 
   /**
@@ -124,6 +128,25 @@ class ModalFormView extends View {
     ) as HTMLFieldSetElement;
 
     PREVIOUS_ACTIVE_FORM_SECTION.classList.remove('is-active');
+
+    /**
+     * Remove required HTML attr. of input element
+     * to prevent an error that prevents the user
+     * from submitting the form
+     */
+    PREVIOUS_ACTIVE_FORM_SECTION.querySelector(
+      'input[type="number"]'
+    )!.removeAttribute('required');
+  }
+
+  /**
+   * Toggle required HTML attr. for pledge input field
+   * @param {HTMLElement} formSection - the current OR previous form section
+   */
+  #toggleRequiredField(formSection: HTMLElement): void {
+    formSection
+      .querySelector('input[type="number"]')
+      ?.setAttribute('required', '');
   }
 
   /**
