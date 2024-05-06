@@ -45,6 +45,9 @@ const modalFormSubmitController = function (): void {
 
   // Save pledge input
   model.setCurrentTotalBacked = CURRENT_VALUE;
+
+  // Render confirmation message
+  ModalFormView.renderConfirmationMessage();
 };
 
 /**
