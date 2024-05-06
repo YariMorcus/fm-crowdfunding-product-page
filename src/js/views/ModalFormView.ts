@@ -30,6 +30,17 @@ class ModalFormView {
   }
 
   /**
+   * Listen for submit event and call
+   * modalFormSubmitController when event fired
+   */
+  addSubmitHandler(handler: Function) {
+    this.form.addEventListener('submit', e => {
+      e.preventDefault();
+      handler();
+    });
+  }
+
+  /**
    * Show the corresponding form based on the currently checked radio button
    * @param {string} radioButtonID - the ID of the radio button
    */
@@ -60,7 +71,7 @@ class ModalFormView {
    * Store currently active form section
    * @param {string} radioButtonId - the ID of the radio button
    */
-  logCurrentActiveFormSection(radioButtonId: string): void {
+  logCurrentActiveFormSection(radioButtonId: string): string {
     const RADIO_BUTTON_EL = document.getElementById(
       radioButtonId
     ) as HTMLElement;
@@ -68,6 +79,8 @@ class ModalFormView {
     this.previousActiveFormSectionID = (<HTMLElement>(
       RADIO_BUTTON_EL.closest('.pledge-form__section')
     )).id;
+
+    return (<HTMLElement>RADIO_BUTTON_EL.closest('.pledge-form__section')).id;
   }
 
   /**
@@ -79,6 +92,27 @@ class ModalFormView {
     ) as HTMLFieldSetElement;
 
     PREVIOUS_ACTIVE_FORM_SECTION.classList.remove('is-active');
+  }
+
+  /**
+   * Retrieve the user input
+   *
+   * @param {string} activeFormID - the current active form ID (id HTML attr. value)
+   * @returns {number} - the user input
+   */
+  retrieveInputValue(activeFormID: string): number {
+    // Retrieve input value based in current active form
+    const CURRENT_ACTIVE_FORM = document.getElementById(
+      activeFormID
+    ) as HTMLElement;
+
+    const VALUE = (
+      CURRENT_ACTIVE_FORM.querySelector(
+        '.pledge-form__input'
+      ) as HTMLInputElement
+    ).value;
+
+    return Number(VALUE);
   }
 
   /**

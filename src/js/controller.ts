@@ -1,3 +1,4 @@
+import model from './model';
 import AboutView from './views/AboutView';
 import HTMLRootView from './views/HTMLRootView';
 import HeaderView from './views/HeaderView';
@@ -24,7 +25,26 @@ const navigationController = function (): void {
 const modalFormController = function (radioButtonID: string): void {
   ModalFormView.showForm(radioButtonID);
 
-  ModalFormView.logCurrentActiveFormSection(radioButtonID);
+  const ACTIVE_FORM = ModalFormView.logCurrentActiveFormSection(radioButtonID);
+
+  model.setCurrentActiveForm = ACTIVE_FORM;
+};
+
+/**
+ * modalFormSubmitController
+ *
+ * Provides the form submit functionality in the modal which includes:
+ * • Retrieving the user input
+ * • Storing the user input
+ */
+const modalFormSubmitController = function (): void {
+  // Retrieve value of current input
+  const CURRENT_VALUE = ModalFormView.retrieveInputValue(
+    model.getCurrentActiveForm
+  );
+
+  // Save pledge input
+  model.setCurrentTotalBacked = CURRENT_VALUE;
 };
 
 /**
@@ -63,6 +83,8 @@ class App {
     AboutView.addClickHandler(modalOpenController);
 
     ModalFormView.addRadioClickHandler(modalFormController);
+
+    ModalFormView.addSubmitHandler(modalFormSubmitController);
   }
 }
 
