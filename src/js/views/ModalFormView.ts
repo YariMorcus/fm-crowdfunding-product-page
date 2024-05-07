@@ -171,6 +171,34 @@ class ModalFormView extends View {
   }
 
   /**
+   * Check if form field is empty
+   *
+   * @param {string} activeFormID - the current active form ID (id HTML attr. value)
+   * @returns {boolean} - true if empty, false otherwise
+   */
+  fieldEmpty(activeFormID: string): boolean {
+    const INPUT_FIELD = document
+      .getElementById(activeFormID)
+      ?.querySelector('input[type="number"') as HTMLInputElement;
+
+    return INPUT_FIELD.validity.valueMissing ? false : true;
+  }
+
+  /**
+   * Check if number is below constraint
+   *
+   * @param {string} activeFormID - the current active form ID (id HTML attr. value)
+   * @returns {boolean} - true if number below minimum, false otherwise
+   */
+  isNumberBelowConstraint(activeFormID: string): boolean {
+    const INPUT_FIELD = document
+      .getElementById(activeFormID)
+      ?.querySelector('input[type="number"') as HTMLInputElement;
+
+    return INPUT_FIELD.validity.rangeUnderflow ? true : false;
+  }
+
+  /**
    * Check if there is a reward associated with the pledge
    *
    * @param {HTMLElement} formSection - the form section associated with the selected radio button

@@ -30,11 +30,15 @@ const modalFormController = function (radioButtonID: string): void {
   model.setCurrentActiveForm = ACTIVE_FORM;
 };
 
+// FIXME hide form when section no reward is selected
+// FIXME show form when section no reward is selected but only with continue button
+
 /**
  * modalFormSubmitController
  *
  * Provides the form submit functionality in the modal which includes:
  * • Retrieving the user input
+ * • Validating the user input
  * • Storing the user input
  */
 const modalFormSubmitController = function (): void {
@@ -42,6 +46,12 @@ const modalFormSubmitController = function (): void {
   const CURRENT_VALUE = ModalFormView.retrieveInputValue(
     model.getCurrentActiveForm
   );
+
+  if (
+    !ModalFormView.fieldEmpty(model.getCurrentActiveForm) ||
+    ModalFormView.isNumberBelowConstraint(model.getCurrentActiveForm)
+  )
+    return;
 
   // Save pledge input
   model.setCurrentTotalBacked = CURRENT_VALUE;
