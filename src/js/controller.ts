@@ -40,6 +40,16 @@ const modalFormController = function (radioButtonID: string): void {
  */
 const modalFormSubmitController = function (): void {
   // Retrieve value of current input
+
+  /**
+   * If there is no reward associated with
+   * the pledge, render confirmation message
+   */
+  if (!ModalFormView.isIsPledgeWithReward(model.getCurrentActiveForm)) {
+    ModalFormView.renderConfirmationMessage();
+    return;
+  }
+
   const CURRENT_VALUE = ModalFormView.retrieveInputValue(
     model.getCurrentActiveForm
   );

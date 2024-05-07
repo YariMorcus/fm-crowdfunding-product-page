@@ -197,11 +197,15 @@ class ModalFormView extends View {
   /**
    * Check if there is a reward associated with the pledge
    *
-   * @param {HTMLElement} formSection - the form section associated with the selected radio button
+   * @param {string} activeFormID - the current active form ID (id HTML attr. value)
    * @returns {boolean} false if there is NO reward associated with the pledge, true otherwise
    */
-  #isIsPledgeWithReward(formSection: HTMLElement): boolean {
-    if (formSection.classList.contains('pledge-form__section--no-reward'))
+  isIsPledgeWithReward(activeFormID: string): boolean {
+    const FORM_SECTION = document.getElementById(
+      activeFormID
+    ) as HTMLFieldSetElement;
+
+    if (FORM_SECTION.classList.contains('pledge-form__section--no-reward'))
       return false;
 
     return true;
