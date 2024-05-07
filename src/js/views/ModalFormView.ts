@@ -268,6 +268,7 @@ class ModalFormView extends View {
     const BUTTON_TEXT_NODE = document.createTextNode(this.successButtonText);
 
     this._setAttributes(BUTTON, {
+      id: 'js-thank-you__btn',
       class: 'btn btn--primary',
       'aria-label': this.successButtonAriaLabelText,
     });

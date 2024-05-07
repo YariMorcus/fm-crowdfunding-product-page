@@ -3,6 +3,7 @@ import AboutView from './views/AboutView';
 import HTMLRootView from './views/HTMLRootView';
 import HeaderView from './views/HeaderView';
 import ModalFormView from './views/ModalFormView';
+import ModalThanksView from './views/ModalThanksView';
 import ModalView from './views/ModalView';
 import NavigationView from './views/NavigationView';
 
@@ -47,6 +48,7 @@ const modalFormSubmitController = function (): void {
    */
   if (!ModalFormView.isIsPledgeWithReward(model.getCurrentActiveForm)) {
     ModalFormView.renderConfirmationMessage();
+    ModalThanksView.addClickHandler(modalCloseController);
     return;
   }
 
@@ -65,6 +67,11 @@ const modalFormSubmitController = function (): void {
 
   // Render confirmation message
   ModalFormView.renderConfirmationMessage();
+
+  //  Update progress bar
+  // StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
+
+  ModalThanksView.addClickHandler(modalCloseController);
 };
 
 /**
