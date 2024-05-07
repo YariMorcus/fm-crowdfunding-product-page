@@ -52,6 +52,14 @@ class Model {
   set setCurrentTotalBacked(userInput: number) {
     this.state.MBMR.totalBacked += userInput;
   }
+
+  /**
+   * Get current total backed value
+   * @returns {number} - the current backed value
+  */
+  get getCurrentTotalBacked(): number {
+    return this.state.MBMR.totalBacked;
+  }
 }
 
 export default new Model();

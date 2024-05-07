@@ -6,6 +6,7 @@ import ModalFormView from './views/ModalFormView';
 import ModalThanksView from './views/ModalThanksView';
 import ModalView from './views/ModalView';
 import NavigationView from './views/NavigationView';
+import StatisticsView from './views/StatisticsView';
 
 /**
  * navigationController
@@ -69,7 +70,7 @@ const modalFormSubmitController = function (): void {
   ModalFormView.renderConfirmationMessage();
 
   //  Update progress bar
-  // StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
+  StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
 
   ModalThanksView.addClickHandler(modalCloseController);
 };
