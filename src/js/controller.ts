@@ -30,9 +30,6 @@ const modalFormController = function (radioButtonID: string): void {
   model.setCurrentActiveForm = ACTIVE_FORM;
 };
 
-// FIXME hide form when section no reward is selected
-// FIXME show form when section no reward is selected but only with continue button
-
 /**
  * modalFormSubmitController
  *

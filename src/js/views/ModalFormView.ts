@@ -71,10 +71,6 @@ class ModalFormView extends View {
       '.pledge-form__section'
     ) as HTMLElement;
 
-    // If there is no reward with the pledge, return early
-    // (there is no form associated with this section)
-    if (!this.#isIsPledgeWithReward(FORM_SECTION)) return;
-
     /**
      * Form active? Hide it first before showing
      * the new form
@@ -136,7 +132,7 @@ class ModalFormView extends View {
      */
     PREVIOUS_ACTIVE_FORM_SECTION.querySelector(
       'input[type="number"]'
-    )!.removeAttribute('required');
+    )?.removeAttribute('required');
   }
 
   /**

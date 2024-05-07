@@ -154,7 +154,7 @@
         <p class="back-modal__intro">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
         <form id="js-pledge-form" action="#" method="POST" class="pledge-form back-modal__form">
-          <fieldset class="pledge-form__section pledge-form__section--no-reward">
+          <fieldset id="js-pledge-form__section-no-reward" class="pledge-form__section pledge-form__section--no-reward">
             <div class="pledge-form__radio-container">
               <input type="radio" name="pledge-selection" id="pledge-form__pledge-no-reward" class="pledge-form__radio-button">
               <label class="pledge-form__label-radio" for="pledge-form__pledge-no-reward">Pledge with no reward</label>
@@ -163,6 +163,10 @@
               Choose to support us without a reward if you simply believe in our project. As a backer,
               you will be signed up to receive product updates via email.
             </p> <!-- .pledge-form__pledge-info -->
+            <div class="pledge-form__inner-container pledge-form__inner-container--no-reward">
+              <hr class="pledge-form__divider">
+              <button class="btn btn--primary btn-form-continue btn-form-continue--no-reward">Continue</button>
+            </div> <!-- .pledge-form__inner-container -->
           </fieldset> <!-- .pledge-form__section -->
 
           <fieldset id="js-pledge-form__section-bamboo-stand" class="pledge-form__section">

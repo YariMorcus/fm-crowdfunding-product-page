@@ -279,6 +279,7 @@
   &__input-pledge-container {
     @include m.breakpoint-sm {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       column-gap: 2rem;
     }
@@ -335,10 +336,15 @@
 */
 
 // Do not add margin bottom when there is no reward associated with the pledge
-.pledge-form__section--no-reward {
+.pledge-form__section--no-reward.is-active {
   .pledge-form {
     &__pledge-info {
       margin-bottom: 0;
+    }
+
+    &__inner-container {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
