@@ -4,13 +4,6 @@ interface formState {
   // currentInput: string;
 }
 
-// The interface that represents the projectState object
-interface projectState {
-  totalBacked: number;
-  totalBackers: number;
-  daysLeft: number;
-}
-
 /**
  * @class Model
  * @class Class contains the data and business logic
