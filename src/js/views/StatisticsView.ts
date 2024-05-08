@@ -26,17 +26,6 @@ class StatisticsView extends View {
   ) as HTMLProgressElement;
 
   /**
-   * Update progress bar
-   * TODO move method before #formatCurrency later on
-   * @param {number} totalBacked - the current total backed value
-   */
-  updateProgressBar(totalBacked: number): void {
-    this.statisticsProgressBar.value = totalBacked;
-
-    this.statisticsProgressBar.textContent = this.#formatCurrency(totalBacked);
-  }
-
-  /**
    * Update total amount
    *
    * @param {number} totalBacked - the current total backed value
@@ -54,6 +43,17 @@ class StatisticsView extends View {
   updateTotalBackers(totalBackers: number): void {
     this.statisticsTotalBackers.textContent = this.#formatNumber(totalBackers);
     this.statisticsTotalBackers.value = `${totalBackers}`;
+  }
+
+  /**
+   * Update progress bar
+   *
+   * @param {number} totalBacked - the current total backed value
+   */
+  updateProgressBar(totalBacked: number): void {
+    this.statisticsProgressBar.value = totalBacked;
+
+    this.statisticsProgressBar.textContent = this.#formatCurrency(totalBacked);
   }
 
   /**
