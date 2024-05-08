@@ -115,6 +115,9 @@ class App {
     // by default by NOT adding .js to <html>
     HTMLRootView.indicateJSAvailable();
 
+    // Render initial data based on state object
+    StatisticsView.renderInitialData(model.setupStatisticsStateObject());
+
     NavigationView.addHandlerClick(navigationController);
 
     HeaderView.addClickHandler(modalOpenController);

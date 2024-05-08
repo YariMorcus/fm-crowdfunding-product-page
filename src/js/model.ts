@@ -21,6 +21,19 @@ class Model {
   };
 
   /**
+   * Setup the statistics state object for initial rendering
+   *
+   * @returns {projectState} - the project state object
+   */
+  setupStatisticsStateObject(): projectState {
+    return {
+      totalBacked: this.getCurrentTotalBacked,
+      totalBackers: this.getTotalBackers,
+      daysLeft: this.getDaysLeft,
+    };
+  }
+
+  /**
    * Store which form is currently active.
    * @param {string} currentFormID - the ID of the current form (id HTML attr. value)
    */
@@ -67,6 +80,15 @@ class Model {
    */
   get getTotalBackers(): number {
     return this.state.MBMR.totalBackers;
+  }
+
+  /**
+   * Get days left
+   *
+   * @returns {number} - the number of days left
+   */
+  get getDaysLeft(): number {
+    return this.state.MBMR.daysLeft;
   }
 }
 
