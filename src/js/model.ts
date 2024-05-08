@@ -56,9 +56,24 @@ class Model {
   /**
    * Get current total backed value
    * @returns {number} - the current backed value
-  */
+   */
   get getCurrentTotalBacked(): number {
     return this.state.MBMR.totalBacked;
+  }
+
+  /**
+   * Increment total backers by one
+   */
+  incrementTotalBackers(): void {
+    ++this.state.MBMR.totalBackers;
+  }
+
+  /**
+   * Get current total backers
+   * @returns {number} - the total amount of backers of this project
+   */
+  get getTotalBackers(): number {
+    return this.state.MBMR.totalBackers;
   }
 }
 

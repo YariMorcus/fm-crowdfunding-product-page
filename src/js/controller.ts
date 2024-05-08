@@ -48,7 +48,15 @@ const modalFormSubmitController = function (): void {
    * the pledge, render confirmation message
    */
   if (!ModalFormView.isIsPledgeWithReward(model.getCurrentActiveForm)) {
+    // Update state
+    model.incrementTotalBackers();
+
+    // Render confirmation message
     ModalFormView.renderConfirmationMessage();
+
+    // Update UI
+    StatisticsView.updateTotalBackers(model.getTotalBackers);
+
     ModalThanksView.addClickHandler(modalCloseController);
     return;
   }
@@ -63,14 +71,16 @@ const modalFormSubmitController = function (): void {
   )
     return;
 
-  // Save pledge input
+  // Update state
   model.setCurrentTotalBacked = CURRENT_VALUE;
+  model.incrementTotalBackers();
 
   // Render confirmation message
   ModalFormView.renderConfirmationMessage();
 
   // Update UI
   StatisticsView.updateTotalAmount(model.getCurrentTotalBacked);
+  StatisticsView.updateTotalBackers(model.getTotalBackers);
   StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
 
   ModalThanksView.addClickHandler(modalCloseController);
