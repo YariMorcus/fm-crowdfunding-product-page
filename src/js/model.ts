@@ -1,7 +1,6 @@
-// The interface that represents the formState object
+// Interface represents formState object
 interface formState {
   currentActiveForm: string;
-  // currentInput: string;
 }
 
 /**
