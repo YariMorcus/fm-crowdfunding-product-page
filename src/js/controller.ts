@@ -69,7 +69,8 @@ const modalFormSubmitController = function (): void {
   // Render confirmation message
   ModalFormView.renderConfirmationMessage();
 
-  //  Update progress bar
+  // Update UI
+  StatisticsView.updateTotalAmount(model.getCurrentTotalBacked);
   StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
 
   ModalThanksView.addClickHandler(modalCloseController);
