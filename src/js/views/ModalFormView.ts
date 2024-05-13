@@ -4,7 +4,7 @@ import View from './View';
 /**
  * @class ModalFormView
  * @description Class provides all functionality for modal form
- * @property {HTMLDialogElement} dialog - the modal itself
+ * @property {HTMLDialogElement} _parentEl - the modal itself
  * @property {HTMLFormElement} form - the form element within the modal
  * @property {string | null} previousActiveFormSectionID - the previously active form section
  * @property {string} successHeadingText - the heading text after submit
@@ -13,13 +13,11 @@ import View from './View';
  * @property {string} successButtonAriaLabelText - the aria-label text after submit
  */
 class ModalFormView extends View {
-  protected readonly _parentEl = document.querySelector(
+  protected _parentEl = document.querySelector(
     '#js-modal'
   ) as HTMLDialogElement;
 
-  private readonly form = document.querySelector(
-    '#js-pledge-form'
-  ) as HTMLFormElement;
+  private form = document.querySelector('#js-pledge-form') as HTMLFormElement;
 
   private previousActiveFormSectionID: string | null = null;
 
@@ -269,7 +267,7 @@ class ModalFormView extends View {
 
     this._setAttributes(BUTTON, {
       id: 'js-thank-you__btn',
-      class: 'btn btn--primary',
+      class: 'btn btn--primary btn-thank-you',
       'aria-label': this.successButtonAriaLabelText,
     });
 
@@ -289,6 +287,22 @@ class ModalFormView extends View {
     const BUTTON = this.#createSuccessCloseModalButton();
 
     this._parentEl.append(IMG, H2, P, BUTTON);
+  }
+
+  /**
+   * Get new reference to parent element after DOM Node deletion
+   * (needed for event listeners)
+   */
+  restoreParentElementReference(): void {
+    this._parentEl = document.querySelector('#js-modal')!;
+  }
+
+  /**
+   * Get new reference to form element after DOM Node deletion
+   * (needed for event listeners)
+   */
+  restoreFormElementReference(): void {
+    this.form = document.querySelector('#js-pledge-form')!;
   }
 }
 

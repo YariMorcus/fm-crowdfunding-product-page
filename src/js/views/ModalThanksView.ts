@@ -6,9 +6,7 @@ import View from './View';
  * @property {HTMLDialogElement} dialog - the dialog element
  */
 class ModalThanksView extends View {
-  private readonly dialog = document.getElementById(
-    'js-modal'
-  ) as HTMLDialogElement;
+  private dialog = document.getElementById('js-modal') as HTMLDialogElement;
 
   /**
    * Listen for click event on Got it button
@@ -20,6 +18,14 @@ class ModalThanksView extends View {
       ?.addEventListener('click', () => {
         handler();
       });
+  }
+
+  /**
+   * Get new reference to dialog element after DOM Node deletion
+   * (needed for event listeners)
+   */
+  restoreDialogElementReference() {
+    this.dialog = document.getElementById('js-modal') as HTMLDialogElement;
   }
 }
 

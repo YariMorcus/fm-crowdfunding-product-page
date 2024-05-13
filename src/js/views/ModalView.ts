@@ -2,14 +2,15 @@
  * @class ModalView
  * @description Class provides all functionality for the modal
  * @property {HTMLDialogElement} modal - the dialog element
+ * @property {HTMLDialogElement | null} modalMarkup - the dialog element markup
  * @property {HTMLButtonElement} closeButton - the close button
  */
 class ModalView {
-  private readonly modal = document.querySelector(
-    '#js-modal'
-  ) as HTMLDialogElement;
+  private modal = document.querySelector('#js-modal') as HTMLDialogElement;
 
-  private readonly closeButton = document.querySelector(
+  private modalMarkup: HTMLDialogElement | null = null;
+
+  private closeButton = document.querySelector(
     '#js-btn-modal-close'
   ) as HTMLButtonElement;
 
@@ -18,8 +19,13 @@ class ModalView {
    * modalCloseController when event fired
    */
   addCloseHandler(handler: Function): void {
-    this.closeButton.addEventListener('click', e => {
-      e.stopImmediatePropagation();
+    this.modal.addEventListener('click', e => {
+      const closeButton = (<HTMLButtonElement>e.target).classList.contains(
+        'btn-thank-you'
+      );
+
+      if (!closeButton) return;
+
       handler();
     });
   }
@@ -36,6 +42,33 @@ class ModalView {
    */
   closeModal(): void {
     this.modal.close();
+  }
+
+  /**
+   * Clone original modal markup with forms
+   */
+  cloneOriginalModalMarkup(): void {
+    this.modalMarkup = this.modal.cloneNode(true) as HTMLDialogElement;
+  }
+
+  /**
+   * Restore original markup so the modal with forms will be shown again
+   */
+  restoreOriginalModalMarkup(): void {
+    this.modal.remove();
+
+    document.body.appendChild(this.modalMarkup!);
+
+    // Store new reference for event listeners
+    this.modal = document.querySelector('#js-modal')!;
+  }
+
+  /**
+   * Get new reference to close button after DOM Node deletion
+   * (needed for event listeners)
+   */
+  restoreCloseButtonReference(): void {
+    this.closeButton = document.querySelector('#js-btn-modal-close')!;
   }
 }
 

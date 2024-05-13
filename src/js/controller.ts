@@ -89,20 +89,42 @@ const modalFormSubmitController = function (): void {
 /**
  * modalCloseController
  *
- * Provides close modal functionality
+ * Provides close modal functionality which includes:
+ * • Restoring the original markup so the user will be shown
+ *   the modal with the forms again
+ * • Restoring all references for event listeners
+ * • Restoring the event listeners themselves
  */
 const modalCloseController = function (): void {
   ModalView.closeModal();
+
+  ModalView.restoreOriginalModalMarkup();
+
+  ModalView.restoreCloseButtonReference();
+
+  ModalView.addCloseHandler(modalCloseController);
+
+  ModalFormView.restoreParentElementReference();
+
+  ModalFormView.restoreFormElementReference();
+
+  ModalThanksView.restoreDialogElementReference();
 };
 
 /**
  * modalOpenController
  *
- * Provides open modal functionality
+ * Provides open modal functionality which includes:
+ * • Attaching the event listeners
+ * • Cloning the modal markup with forms for later restoration
  */
 const modalOpenController = function (): void {
   ModalView.openModal();
-  ModalView.addCloseHandler(modalCloseController);
+  ModalFormView.addRadioClickHandler(modalFormController);
+  ModalFormView.addSubmitHandler(modalFormSubmitController);
+
+  // Clone current modal markup with the forms
+  ModalView.cloneOriginalModalMarkup();
 };
 
 /**
@@ -124,9 +146,7 @@ class App {
 
     AboutView.addClickHandler(modalOpenController);
 
-    ModalFormView.addRadioClickHandler(modalFormController);
-
-    ModalFormView.addSubmitHandler(modalFormSubmitController);
+    ModalView.addCloseHandler(modalCloseController);
   }
 }
 
