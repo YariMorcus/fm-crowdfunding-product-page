@@ -96,13 +96,11 @@ const modalFormSubmitController = function (): void {
  * • Restoring the event listeners themselves
  */
 const modalCloseController = function (): void {
-  ModalView.closeModal();
-
   ModalView.restoreOriginalModalMarkup();
 
-  ModalView.restoreCloseButtonReference();
+  ModalView.closeModal();
 
-  ModalView.addCloseHandler(modalCloseController);
+  ModalView.restoreCloseButtonReference();
 
   ModalFormView.restoreParentElementReference();
 
@@ -122,6 +120,7 @@ const modalOpenController = function (): void {
   ModalView.openModal();
   ModalFormView.addRadioClickHandler(modalFormController);
   ModalFormView.addSubmitHandler(modalFormSubmitController);
+  ModalView.addCloseHandler(modalCloseController);
 
   // Clone current modal markup with the forms
   ModalView.cloneOriginalModalMarkup();
@@ -145,8 +144,6 @@ class App {
     HeaderView.addClickHandler(modalOpenController);
 
     AboutView.addClickHandler(modalOpenController);
-
-    ModalView.addCloseHandler(modalCloseController);
   }
 }
 
