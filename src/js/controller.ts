@@ -1,5 +1,6 @@
 import model from './model';
 import AboutView from './views/AboutView';
+import BookmarkView from './views/BookmarkView';
 import HTMLRootView from './views/HTMLRootView';
 import HeaderView from './views/HeaderView';
 import ModalFormView from './views/ModalFormView';
@@ -127,6 +128,19 @@ const modalOpenController = function (): void {
 };
 
 /**
+ * bookmarkController
+ *
+ * Provides bookmark functionality which includes:
+ * • Toggling the activated state
+ * • Saving bookmark state
+ */
+const bookmarkController = function (): void {
+  BookmarkView.toggleActivatedState();
+
+  model.setBookmarkState();
+};
+
+/**
  * @class App
  * @description class provides all JS functionality for the application (init function)
  */
@@ -144,6 +158,8 @@ class App {
     HeaderView.addClickHandler(modalOpenController);
 
     AboutView.addClickHandler(modalOpenController);
+
+    BookmarkView.addClickHandler(bookmarkController);
   }
 }
 

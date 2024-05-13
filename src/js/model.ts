@@ -16,6 +16,7 @@ class Model {
       totalBacked: 89_914,
       totalBackers: 5_007,
       daysLeft: 56,
+      bookmarked: false,
     } as projectState,
   };
 
@@ -88,6 +89,13 @@ class Model {
    */
   get getDaysLeft(): number {
     return this.state.MBMR.daysLeft;
+  }
+
+  /**
+   * Save bookmarked state
+   */
+  setBookmarkState() {
+    this.state.MBMR.bookmarked = this.state.MBMR.bookmarked ? false : true;
   }
 }
 

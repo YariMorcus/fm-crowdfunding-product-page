@@ -12,4 +12,5 @@ interface projectState {
   totalBacked: number;
   totalBackers: number;
   daysLeft: number;
+  bookmarked?: boolean;
 }
