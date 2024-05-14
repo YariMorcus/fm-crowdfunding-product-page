@@ -58,7 +58,7 @@ const modalFormSubmitController = function (): void {
     // Update UI
     StatisticsView.updateTotalBackers(model.getTotalBackers);
 
-    ModalThanksView.addClickHandler(modalCloseController);
+    ModalThanksView.addCloseHandler(modalCloseController);
     return;
   }
 
@@ -84,7 +84,7 @@ const modalFormSubmitController = function (): void {
   StatisticsView.updateTotalBackers(model.getTotalBackers);
   StatisticsView.updateProgressBar(model.getCurrentTotalBacked);
 
-  ModalThanksView.addClickHandler(modalCloseController);
+  ModalThanksView.addCloseHandler(modalCloseController);
 };
 
 /**
@@ -96,9 +96,18 @@ const modalFormSubmitController = function (): void {
  * • Restoring all references for event listeners
  * • Restoring the event listeners themselves
  */
-const modalCloseController = function (): void {
+const modalCloseController = function (thankYou: boolean = false): void {
+  ModalView.closeModal();
+
+  /**
+   * Only restore original markup and
+   * references if user submitted the form
+   */
+  if (!thankYou) return;
+
   ModalView.restoreOriginalModalMarkup();
 
+  // Prevent modal from opening immediately
   ModalView.closeModal();
 
   ModalView.restoreCloseButtonReference();

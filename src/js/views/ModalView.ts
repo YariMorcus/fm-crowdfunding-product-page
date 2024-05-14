@@ -21,7 +21,7 @@ class ModalView {
   addCloseHandler(handler: Function): void {
     this.modal.addEventListener('click', e => {
       const closeButton = (<HTMLButtonElement>e.target).classList.contains(
-        'btn-thank-you'
+        'btn-modal-close'
       );
 
       if (!closeButton) return;

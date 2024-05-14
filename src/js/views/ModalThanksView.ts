@@ -9,15 +9,19 @@ class ModalThanksView extends View {
   private dialog = document.getElementById('js-modal') as HTMLDialogElement;
 
   /**
-   * Listen for click event on Got it button
-   * and call controller when event fired
+   * Listen for click event on close button and call
+   * modalCloseController when event fired
    */
-  addClickHandler(handler: Function): void {
-    this.dialog
-      .querySelector('#js-thank-you__btn')
-      ?.addEventListener('click', () => {
-        handler();
-      });
+  addCloseHandler(handler: Function): void {
+    this.dialog.addEventListener('click', e => {
+      const closeButton = (<HTMLButtonElement>e.target).classList.contains(
+        'btn-thank-you'
+      );
+
+      if (!closeButton) return;
+
+      handler(true);
+    });
   }
 
   /**
