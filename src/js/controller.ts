@@ -53,7 +53,7 @@ const modalFormSubmitController = function (): void {
     model.incrementTotalBackers();
 
     // Render confirmation message
-    ModalFormView.renderConfirmationMessage();
+    ModalThanksView.renderConfirmationMessage();
 
     // Update UI
     StatisticsView.updateTotalBackers(model.getTotalBackers);
@@ -77,7 +77,7 @@ const modalFormSubmitController = function (): void {
   model.incrementTotalBackers();
 
   // Render confirmation message
-  ModalFormView.renderConfirmationMessage();
+  ModalThanksView.renderConfirmationMessage();
 
   // Update UI
   StatisticsView.updateTotalAmount(model.getCurrentTotalBacked);

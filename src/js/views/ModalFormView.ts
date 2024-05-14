@@ -1,4 +1,3 @@
-import iconCheck from '../../img/icon-check.svg';
 import View from './View';
 
 /**
@@ -7,10 +6,6 @@ import View from './View';
  * @property {HTMLDialogElement} _parentEl - the modal itself
  * @property {HTMLFormElement} form - the form element within the modal
  * @property {string | null} previousActiveFormSectionID - the previously active form section
- * @property {string} successHeadingText - the heading text after submit
- * @property {string} successParagraphText - the paragraph text after submit
- * @property {string} successButtonText - the button text after submit
- * @property {string} successButtonAriaLabelText - the aria-label text after submit
  */
 class ModalFormView extends View {
   protected _parentEl = document.querySelector(
@@ -21,12 +16,6 @@ class ModalFormView extends View {
 
   private previousActiveFormSectionID: string | null = null;
 
-  // Texts related to success message after form submit
-  private readonly successHeadingText = 'Thanks for your support!';
-  private readonly successParagraphText =
-    'Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.';
-  private readonly successButtonText = 'Got it!';
-  private readonly successButtonAriaLabelText = 'Close modal';
   /**
    * Listen for click event on radio button and call
    * modalFormController when event fired
@@ -97,20 +86,6 @@ class ModalFormView extends View {
     )).id;
 
     return (<HTMLElement>RADIO_BUTTON_EL.closest('.pledge-form__section')).id;
-  }
-
-  /**
-   * Render the confirmation message after submit
-   */
-  renderConfirmationMessage(): void {
-    // Clear parent element
-    this._clear();
-
-    // Add class to dialog element for scoping specific styles
-    this._parentEl.classList.add('modal-thank-you');
-
-    // Insert markup in DOM
-    this.#createConfirmationMarkup();
   }
 
   /**
@@ -207,86 +182,6 @@ class ModalFormView extends View {
       return false;
 
     return true;
-  }
-
-  /**
-   * Create success icon img element (submitted form)
-   * @returns {HTMLImageElement} - the image element
-   */
-  #createSuccessIconElement(): HTMLImageElement {
-    const IMG = document.createElement('img');
-
-    this._setAttributes(IMG, {
-      class: 'modal-thank-you__icon-check',
-      src: iconCheck,
-      alt: '',
-      width: 64,
-      height: 64,
-    });
-
-    return IMG;
-  }
-
-  /**
-   * Create success HTML heading element (submitted form)
-   * @returns {HTMLHeadingElement} - the heading element
-   */
-  #createSuccessHeadingElement(): HTMLHeadingElement {
-    const H2 = document.createElement('h2');
-    const H2_TEXT_NODE = document.createTextNode(this.successHeadingText);
-
-    H2.classList.add('modal-thank-you__title');
-
-    H2.append(H2_TEXT_NODE);
-
-    return H2;
-  }
-
-  /**
-   * Create success HTML paragraph element (submitted form)
-   * @returns {HTMLParagraphElement} - the paragraph element
-   */
-  #createSuccessPElement(): HTMLParagraphElement {
-    const P = document.createElement('p');
-    const P_TEXT_NODE = document.createTextNode(this.successParagraphText);
-
-    P.classList.add('modal-thank-you__paragraph');
-
-    P.append(P_TEXT_NODE);
-
-    return P;
-  }
-
-  /**
-   * Create success close modal button element (submitted form)
-   * @returns {HTMLButtonElement} - the button element
-   */
-  #createSuccessCloseModalButton(): HTMLButtonElement {
-    const BUTTON = document.createElement('button');
-    const BUTTON_TEXT_NODE = document.createTextNode(this.successButtonText);
-
-    this._setAttributes(BUTTON, {
-      id: 'js-thank-you__btn',
-      class: 'btn btn--primary btn-thank-you',
-      'aria-label': this.successButtonAriaLabelText,
-    });
-
-    BUTTON.append(BUTTON_TEXT_NODE);
-
-    return BUTTON;
-  }
-
-  /**
-   * Create success HTML paragraph element (submitted form)
-   * @returns {HTMLParagraphElement} - the paragraph element
-   */
-  #createConfirmationMarkup(): void {
-    const IMG = this.#createSuccessIconElement();
-    const H2 = this.#createSuccessHeadingElement();
-    const P = this.#createSuccessPElement();
-    const BUTTON = this.#createSuccessCloseModalButton();
-
-    this._parentEl.append(IMG, H2, P, BUTTON);
   }
 
   /**
