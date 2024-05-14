@@ -40,6 +40,7 @@ class ModalFormView extends View {
    */
   addSubmitHandler(handler: Function) {
     this.form.addEventListener('submit', e => {
+      e.stopImmediatePropagation();
       e.preventDefault();
       handler();
     });
