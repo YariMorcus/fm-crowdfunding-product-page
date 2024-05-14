@@ -133,11 +133,36 @@ const modalOpenController = function (): void {
  * Provides bookmark functionality which includes:
  * • Toggling the activated state
  * • Saving bookmark state
+ * • Setting and removing localStorage data
+ *
+ * @param {boolean} [init=false] - true if controller is called by init of app
  */
-const bookmarkController = function (): void {
+const bookmarkController = function (init: boolean = false): void {
   BookmarkView.toggleActivatedState();
 
-  model.setBookmarkState();
+  /**
+   * If controller is called by initialization of the
+   * app, only activate the bookmark state of the button
+   */
+  if (init) return;
+
+  /**
+   * If project has not been bookmarked before AND controller
+   * is not called by initialization of the app (in other words: user
+   * clicks the bookmark button), bookmark project and save it to localStorage
+   */
+  if (!model.getLocalStorageBookmarkState && !init) {
+    model.setBookmarkState();
+    model.setLocalStorageBookmarkState();
+    return;
+  }
+
+  /**
+   * Remove bookmark state from localStorage if
+   * bookmarked before and user presses bookmark button again
+   */
+  if (model.getLocalStorageBookmarkState)
+    model.deleteLocalStorageBookmarkState();
 };
 
 /**
@@ -160,6 +185,11 @@ class App {
     AboutView.addClickHandler(modalOpenController);
 
     BookmarkView.addClickHandler(bookmarkController);
+
+    // Activate button bookmarked state if user bookmarked project before
+    if (model.getLocalStorageBookmarkState) {
+      bookmarkController(true);
+    }
   }
 }
 

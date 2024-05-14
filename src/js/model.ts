@@ -94,8 +94,40 @@ class Model {
   /**
    * Save bookmarked state
    */
-  setBookmarkState() {
+  setBookmarkState(): void {
     this.state.MBMR.bookmarked = this.state.MBMR.bookmarked ? false : true;
+  }
+
+  /**
+   * Get bookmarked value
+   *
+   * @returns {boolean | undefined} - current bookmarked value
+   */
+  get getBookmarkState(): boolean | undefined {
+    return this.state.MBMR.bookmarked;
+  }
+
+  /**
+   * Store bookmarked state in localStorage (save user preference)
+   */
+  setLocalStorageBookmarkState(): void {
+    localStorage.setItem('bookmarked', `${this.getBookmarkState}`);
+  }
+
+  /**
+   * Get bookmark state from localStorage
+   *
+   * @returns {string | null} - return bookmark state value from localStorage. Null if project has not been bookmarked
+   */
+  get getLocalStorageBookmarkState(): string | null {
+    return localStorage.getItem('bookmarked');
+  }
+
+  /**
+   * Remove bookmark state from localStorage
+   */
+  deleteLocalStorageBookmarkState(): void {
+    localStorage.removeItem('bookmarked');
   }
 }
 
