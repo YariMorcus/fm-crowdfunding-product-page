@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE_BOOKMARK_KEY } from './config';
+
 // Interface represents formState object
 interface formState {
   currentActiveForm: string;
@@ -111,7 +113,10 @@ class Model {
    * Store bookmarked state in localStorage (save user preference)
    */
   setLocalStorageBookmarkState(): void {
-    localStorage.setItem('bookmarked', `${this.getBookmarkState}`);
+    localStorage.setItem(
+      LOCAL_STORAGE_BOOKMARK_KEY,
+      `${this.getBookmarkState}`
+    );
   }
 
   /**
@@ -120,14 +125,14 @@ class Model {
    * @returns {string | null} - return bookmark state value from localStorage. Null if project has not been bookmarked
    */
   get getLocalStorageBookmarkState(): string | null {
-    return localStorage.getItem('bookmarked');
+    return localStorage.getItem(LOCAL_STORAGE_BOOKMARK_KEY);
   }
 
   /**
    * Remove bookmark state from localStorage
    */
   deleteLocalStorageBookmarkState(): void {
-    localStorage.removeItem('bookmarked');
+    localStorage.removeItem(LOCAL_STORAGE_BOOKMARK_KEY);
   }
 }
 
