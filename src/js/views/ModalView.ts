@@ -1,3 +1,4 @@
+import View from './View';
 /**
  * @class ModalView
  * @description Class provides all functionality for the modal
@@ -5,11 +6,12 @@
  * @property {HTMLDialogElement | null} modalMarkup - the dialog element markup
  * @property {HTMLButtonElement} closeButton - the close button
  */
-class ModalView {
+class ModalView extends View {
   private modal = document.querySelector('#js-modal') as HTMLDialogElement;
 
   private modalMarkup: HTMLDialogElement | null = null;
 
+  // TODO remove unused field
   private closeButton = document.querySelector(
     '#js-btn-modal-close'
   ) as HTMLButtonElement;

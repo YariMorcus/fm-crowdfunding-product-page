@@ -39,6 +39,14 @@ class ModalThanksView extends View {
   }
 
   /**
+   * Get new reference to dialog element after DOM Node deletion
+   * (needed for event listeners)
+   */
+  restoreDialogElementReference(): void {
+    this._parentEl = document.getElementById('js-modal') as HTMLDialogElement;
+  }
+
+  /**
    * Render the confirmation message after submit
    */
   renderConfirmationMessage(): void {
@@ -130,14 +138,6 @@ class ModalThanksView extends View {
     BUTTON.append(BUTTON_TEXT_NODE);
 
     return BUTTON;
-  }
-
-  /**
-   * Get new reference to dialog element after DOM Node deletion
-   * (needed for event listeners)
-   */
-  restoreDialogElementReference() {
-    this._parentEl = document.getElementById('js-modal') as HTMLDialogElement;
   }
 }
 

@@ -1,3 +1,4 @@
+import View from './View';
 /**
  * @class NavigationView
  * @description Class provides all functionality for the mobile navigation
@@ -5,7 +6,7 @@
  * @property {HTMLButtonElement} toggleButton - the toggle button
  * @property {HTMLUListElement} menu - the navigation menu
  */
-class NavigationView {
+class NavigationView extends View {
   private readonly navOverlayDiv = document.querySelector(
     '#js-nav-overlay'
   ) as HTMLDivElement;
@@ -20,7 +21,7 @@ class NavigationView {
    * Listen for click event on toggle button and call
    * navigationController when event fired
    */
-  addHandlerClick(handler: Function) {
+  addHandlerClick(handler: Function): void {
     this.toggleButton.addEventListener('click', () => {
       this.toggleButton.classList.toggle('is-active');
 

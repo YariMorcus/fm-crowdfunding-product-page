@@ -1,9 +1,11 @@
+import View from './View';
+
 /**
  * @class AboutView
  * @description Class adds necessary JS functionality to open modal
  * @property {HTMLElement} aboutSection - About this project section
  */
-class AboutView {
+class AboutView extends View {
   private readonly aboutSection = document.querySelector(
     '.project'
   ) as HTMLElement;

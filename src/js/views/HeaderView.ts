@@ -1,9 +1,10 @@
+import View from './View';
 /**
  * @class HeaderView
  * @description Class adds necessary JS functionality to open modal
  * @property {HTMLButtonElement} backThisProjectButton - Back this project button
  */
-class HeaderView {
+class HeaderView extends View {
   private readonly backThisProjectButton = document.querySelector(
     '#js-btn--back-this-project'
   ) as HTMLButtonElement;

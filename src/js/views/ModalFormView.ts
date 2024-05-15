@@ -20,7 +20,7 @@ class ModalFormView extends View {
    * Listen for click event on radio button and call
    * modalFormController when event fired
    */
-  addRadioClickHandler(handler: Function) {
+  addRadioClickHandler(handler: Function): void {
     this.form.addEventListener('click', e => {
       const radioButton = (<HTMLElement>e.target).classList.contains(
         'pledge-form__radio-button'
@@ -38,7 +38,7 @@ class ModalFormView extends View {
    * Listen for submit event and call
    * modalFormSubmitController when event fired
    */
-  addSubmitHandler(handler: Function) {
+  addSubmitHandler(handler: Function): void {
     this.form.addEventListener('submit', e => {
       e.stopImmediatePropagation();
       e.preventDefault();
@@ -87,36 +87,6 @@ class ModalFormView extends View {
     )).id;
 
     return (<HTMLElement>RADIO_BUTTON_EL.closest('.pledge-form__section')).id;
-  }
-
-  /**
-   * Hide the currently active form in the modal
-   */
-  #hideForm(): void {
-    const PREVIOUS_ACTIVE_FORM_SECTION = document.getElementById(
-      this.previousActiveFormSectionID!
-    ) as HTMLFieldSetElement;
-
-    PREVIOUS_ACTIVE_FORM_SECTION.classList.remove('is-active');
-
-    /**
-     * Remove required HTML attr. of input element
-     * to prevent an error that prevents the user
-     * from submitting the form
-     */
-    PREVIOUS_ACTIVE_FORM_SECTION.querySelector(
-      'input[type="number"]'
-    )?.removeAttribute('required');
-  }
-
-  /**
-   * Toggle required HTML attr. for pledge input field
-   * @param {HTMLElement} formSection - the current OR previous form section
-   */
-  #toggleRequiredField(formSection: HTMLElement): void {
-    formSection
-      .querySelector('input[type="number"]')
-      ?.setAttribute('required', '');
   }
 
   /**
@@ -199,6 +169,36 @@ class ModalFormView extends View {
    */
   restoreFormElementReference(): void {
     this.form = document.querySelector('#js-pledge-form')!;
+  }
+
+  /**
+   * Hide the currently active form in the modal
+   */
+  #hideForm(): void {
+    const PREVIOUS_ACTIVE_FORM_SECTION = document.getElementById(
+      this.previousActiveFormSectionID!
+    ) as HTMLFieldSetElement;
+
+    PREVIOUS_ACTIVE_FORM_SECTION.classList.remove('is-active');
+
+    /**
+     * Remove required HTML attr. of input element
+     * to prevent an error that prevents the user
+     * from submitting the form
+     */
+    PREVIOUS_ACTIVE_FORM_SECTION.querySelector(
+      'input[type="number"]'
+    )?.removeAttribute('required');
+  }
+
+  /**
+   * Toggle required HTML attr. for pledge input field
+   * @param {HTMLElement} formSection - the current OR previous form section
+   */
+  #toggleRequiredField(formSection: HTMLElement): void {
+    formSection
+      .querySelector('input[type="number"]')
+      ?.setAttribute('required', '');
   }
 }
 

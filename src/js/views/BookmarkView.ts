@@ -1,10 +1,11 @@
+import View from './View';
 /**
  * @class BookmarkView
  * @description Class adds necessary JS for bookmark functionality
  * @property {HTMLButtonElement} bookmarkButton - the bookmark button
  * @property {HTMLSpanElement} bookmarkButtonText - the bookmark button text
  */
-class BookmarkView {
+class BookmarkView extends View {
   private bookmarkButton = document.querySelector(
     '#js-btn-bookmark'
   ) as HTMLButtonElement;
