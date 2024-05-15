@@ -11,7 +11,6 @@ class ModalView extends View {
 
   private modalMarkup: HTMLDialogElement | null = null;
 
-  // TODO remove unused field
   private closeButton = document.querySelector(
     '#js-btn-modal-close'
   ) as HTMLButtonElement;
