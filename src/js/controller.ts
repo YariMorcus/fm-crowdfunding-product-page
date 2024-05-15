@@ -122,7 +122,7 @@ const modalCloseController = function (thankYou: boolean = false): void {
 /**
  * modalOpenController
  *
- * Provides open modal functionality which includes:
+ * Provides open modal functionality `which includes:
  * • Attaching the event listeners
  * • Cloning the modal markup with forms for later restoration
  */
